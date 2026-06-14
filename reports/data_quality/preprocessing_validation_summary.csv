@@ -1,0 +1,9 @@
+﻿dataset,column,status,rows,missing_count,empty_count,valid_count
+intent,utterance_clean,ok,12,0,0,12
+intent,utterance_normalized,ok,12,0,0,12
+intent,utterance_tokens,ok,12,0,0,12
+intent,utterance_preprocessed,ok,12,0,0,12
+program,program_profile_text,ok,5,0,0,5
+career,career_profile_text,ok,5,0,0,5
+skill,skill_profile_text,ok,7,0,0,7
+roadmap,roadmap_profile_text,ok,6,0,0,6

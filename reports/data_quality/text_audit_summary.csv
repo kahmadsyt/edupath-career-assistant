@@ -1,0 +1,6 @@
+﻿dataset,text_column,status,rows,missing_text,empty_text,duplicate_text,avg_text_length,min_text_length,max_text_length
+intent,utterance,ok,12,0,0,0,54.92,32,84
+program,deskripsi_singkat,ok,5,0,0,0,98.0,89,113
+career,deskripsi_singkat,ok,5,0,0,0,64.6,52,78
+skill,deskripsi_singkat,ok,7,0,0,0,83.14,68,93
+roadmap,tujuan_fase,ok,6,0,0,0,50.33,38,59

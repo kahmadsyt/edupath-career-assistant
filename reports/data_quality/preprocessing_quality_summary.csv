@@ -1,0 +1,6 @@
+﻿run_timestamp,dataset,rows,new_columns,empty_utterance_preprocessed,avg_final_token_count,stemming_available,stopword_source,normalization_terms,empty_profile_text,avg_profile_token_count
+2026-06-14 14:01:42,intent,12,utterance_clean|utterance_normalized|utterance_tokens|utterance_preprocessed,0.0,5.17,True,Sastrawi + custom,18,,
+2026-06-14 14:01:42,program,5,program_profile_text,,,True,Sastrawi + custom,18,0.0,44.8
+2026-06-14 14:01:42,career,5,career_profile_text,,,True,Sastrawi + custom,18,0.0,36.4
+2026-06-14 14:01:42,skill,7,skill_profile_text,,,True,Sastrawi + custom,18,0.0,26.86
+2026-06-14 14:01:42,roadmap,6,roadmap_profile_text,,,True,Sastrawi + custom,18,0.0,31.33
