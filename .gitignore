@@ -1,0 +1,61 @@
+# =========================
+# Python Cache
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Environment
+# =========================
+.env
+.venv/
+venv/
+env/
+ENV/
+conda-meta/
+
+# =========================
+# OS and Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
+
+# =========================
+# Model Artifacts
+# Catatan:
+# Untuk tahap awal, model diabaikan.
+# Jika nanti model final kecil dan dibutuhkan Streamlit, aturan ini bisa disesuaikan.
+# =========================
+models/*
+!models/.gitkeep
+
+# =========================
+# Output Artifacts
+# =========================
+outputs/*
+!outputs/.gitkeep
+
+# =========================
+# Private Raw Data
+# Simpan data sensitif/pribadi di folder ini agar tidak ikut ter-push.
+# =========================
+data/raw/private/
