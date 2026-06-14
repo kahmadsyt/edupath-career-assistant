@@ -1,0 +1,19 @@
+﻿norm_id,kata_input,kata_baku,bahasa_sumber,kategori,contoh_kalimat,prioritas,catatan
+NRM001,gw,saya,id_nonformal,pronomina,gw suka matematika,1,Bahasa gaul umum
+NRM002,gue,saya,id_nonformal,pronomina,gue bingung pilih jurusan,1,Bahasa gaul umum
+NRM003,aku,saya,id_nonformal,pronomina,aku mau kuliah apa ya,2,Dipakai untuk variasi non-formal
+NRM004,pgn,ingin,id_nonformal,singkatan,pgn jadi programmer,1,Singkatan
+NRM005,pingin,ingin,id_nonformal,variasi,pingin kerja di data,1,Variasi kata
+NRM006,ngoding,pemrograman,id_nonformal,istilah,suka ngoding,1,Istilah populer
+NRM007,jurusan,program studi,id_nonformal,istilah,jurusan apa yang cocok,2,Istilah umum siswa
+NRM008,matkul,mata kuliah,id_nonformal,singkatan,matkul informatika apa saja,2,Singkatan kampus
+NRM009,seneng,suka,jawa_umum,kata_umum,aku seneng komputer,1,Jawa umum
+NRM010,pengin,ingin,jawa_umum,kata_umum,aku pengin dadi analis data,1,Jawa umum
+NRM011,dadi,menjadi,jawa_umum,kata_umum,pengin dadi programmer,1,Jawa umum
+NRM012,sing,yang,jawa_umum,kata_umum,jurusan sing cocok,1,Jawa umum
+NRM013,opo,apa,jawa_umum,kata_tanya,opo jurusan sing pas,1,Jawa umum
+NRM014,resep,suka,sunda_umum,kata_umum,abdi resep komputer,1,Sunda umum
+NRM015,hoyong,ingin,sunda_umum,kata_umum,abdi hoyong janten analis,1,Sunda umum
+NRM016,janten,menjadi,sunda_umum,kata_umum,hoyong janten programmer,1,Sunda umum
+NRM017,naon,apa,sunda_umum,kata_tanya,prodi naon nu cocog,1,Sunda umum
+NRM018,kumaha,bagaimana,sunda_umum,kata_tanya,kumaha cara belajar data,1,Sunda umum

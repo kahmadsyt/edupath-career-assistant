@@ -1,0 +1,26 @@
+﻿dataset,check_name,status,detail
+intent_dataset_raw,required_columns,PASS,Semua kolom wajib tersedia.
+intent_dataset_raw,empty_id,PASS,Jumlah ID kosong: 0
+intent_dataset_raw,duplicate_id,PASS,Jumlah ID duplikat: 0
+karier_raw,required_columns,PASS,Semua kolom wajib tersedia.
+karier_raw,empty_id,PASS,Jumlah ID kosong: 0
+karier_raw,duplicate_id,PASS,Jumlah ID duplikat: 0
+normalisasi_bahasa_raw,required_columns,PASS,Semua kolom wajib tersedia.
+normalisasi_bahasa_raw,empty_id,PASS,Jumlah ID kosong: 0
+normalisasi_bahasa_raw,duplicate_id,PASS,Jumlah ID duplikat: 0
+program_studi_s1_raw,required_columns,PASS,Semua kolom wajib tersedia.
+program_studi_s1_raw,empty_id,PASS,Jumlah ID kosong: 0
+program_studi_s1_raw,duplicate_id,PASS,Jumlah ID duplikat: 0
+roadmap_belajar_raw,required_columns,PASS,Semua kolom wajib tersedia.
+roadmap_belajar_raw,empty_id,PASS,Jumlah ID kosong: 0
+roadmap_belajar_raw,duplicate_id,PASS,Jumlah ID duplikat: 0
+skill_awal_raw,required_columns,PASS,Semua kolom wajib tersedia.
+skill_awal_raw,empty_id,PASS,Jumlah ID kosong: 0
+skill_awal_raw,duplicate_id,PASS,Jumlah ID duplikat: 0
+intent_dataset_raw,duplicate_utterance,PASS,Jumlah utterance duplikat: 0
+intent_dataset_raw,intent_label_distribution,WARN,Minimum data per intent_label: 1. Untuk modeling final disarankan >= 100 per label.
+intent_dataset_raw,language_distribution,PASS,Distribusi bahasa: id_formal=6; id_nonformal=4; jawa_umum=1; sunda_umum=1
+intent_dataset_raw,fk_target_program_id,PASS,Semua target_program_id tersedia di program_studi_s1_raw.
+roadmap_belajar_raw,fk_program_id,PASS,Semua roadmap program_id tersedia di program_studi_s1_raw.
+program_studi_s1_raw,fk_prospek_karier_id_list,PASS,Semua prospek_karier_id_list tersedia di karier_raw.
+program_studi_s1_raw,fk_skill_id_list,PASS,Semua skill_id_list tersedia di skill_awal_raw.
