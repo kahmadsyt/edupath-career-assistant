@@ -1,0 +1,51 @@
+TAHAP 06 — Chatbot Pipeline Integration
+
+Project:
+EduPath Career Assistant
+
+Generated at:
+2026-06-14 20:33:11
+
+Tujuan:
+Mengintegrasikan model intent classification dari Tahap 04 dan program studi recommender system
+dari Tahap 05 ke dalam satu pipeline chatbot sederhana.
+
+Komponen Pipeline:
+1. Text cleaning
+2. Normalisasi bahasa
+3. Text preprocessing
+4. Intent classification
+5. Rule-based intent routing
+6. Program studi recommender
+7. Roadmap mapping
+8. Career mapping
+9. Skill mapping
+10. Chatbot response generation
+
+Artifact yang digunakan:
+1. models\intent_classifier_best_model.joblib
+2. models\intent_tfidf_vectorizer.joblib
+3. models\program_recommender_tfidf_vectorizer.joblib
+4. models\program_recommender_matrix.joblib
+
+Dataset utama:
+1. data\processed\intent_dataset_processed.csv
+2. data\processed\program_recommender_profiles_stage05.csv
+3. data\processed\karier_processed.csv
+4. data\processed\skill_awal_processed.csv
+5. data\processed\roadmap_belajar_processed.csv
+6. data\processed\normalisasi_bahasa_processed.csv
+
+Jumlah skenario uji:
+10
+
+Catatan Evaluasi:
+Pipeline chatbot sudah berjalan end-to-end untuk intent routing, rekomendasi program studi,
+roadmap belajar, prospek karier, skill awal, info program studi, sapaan, dan fallback.
+Namun, karena dataset intent dan program studi masih kecil, hasil rekomendasi dan klasifikasi
+masih bersifat baseline akademik dan perlu diperkuat dengan perluasan dataset serta validasi domain expert.
+
+Output Stage 06:
+1. reports/stage06/chatbot_test_results_stage06.csv
+2. reports/stage06/chatbot_sample_responses_stage06.md
+3. reports/stage06/stage06_summary.txt
