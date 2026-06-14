@@ -1,0 +1,17 @@
+{
+    "project": "EduPath Career Assistant",
+    "stage": "Tahap 05 - Program Studi Recommender System & Roadmap Mapping",
+    "method": "Content-Based Filtering using TF-IDF, Cosine Similarity, and Rule-Based Structured Scoring",
+    "text_similarity_weight": 0.65,
+    "structured_score_weight": 0.35,
+    "program_dataset": "D:\\DATA-KAMIL\\MATKUL\\SEMESTER-1\\DATA-MINING\\TUGAS\\UAS\\edupath-career-assitant\\data\\processed\\program_studi_s1_processed.csv",
+    "career_dataset": "D:\\DATA-KAMIL\\MATKUL\\SEMESTER-1\\DATA-MINING\\TUGAS\\UAS\\edupath-career-assitant\\data\\processed\\karier_processed.csv",
+    "skill_dataset": "D:\\DATA-KAMIL\\MATKUL\\SEMESTER-1\\DATA-MINING\\TUGAS\\UAS\\edupath-career-assitant\\data\\processed\\skill_awal_processed.csv",
+    "roadmap_dataset": "D:\\DATA-KAMIL\\MATKUL\\SEMESTER-1\\DATA-MINING\\TUGAS\\UAS\\edupath-career-assitant\\data\\processed\\roadmap_belajar_processed.csv",
+    "outputs": {
+        "program_recommender_profiles": "D:\\DATA-KAMIL\\MATKUL\\SEMESTER-1\\DATA-MINING\\TUGAS\\UAS\\edupath-career-assitant\\data\\processed\\program_recommender_profiles_stage05.csv",
+        "sample_recommendations": "D:\\DATA-KAMIL\\MATKUL\\SEMESTER-1\\DATA-MINING\\TUGAS\\UAS\\edupath-career-assitant\\reports\\stage05\\sample_recommendations_stage05.csv",
+        "roadmap_mapping_sample": "D:\\DATA-KAMIL\\MATKUL\\SEMESTER-1\\DATA-MINING\\TUGAS\\UAS\\edupath-career-assitant\\reports\\stage05\\roadmap_mapping_sample_stage05.csv"
+    },
+    "notes": "Recommender system ini merupakan baseline content-based recommender. Dataset masih kecil sehingga hasil rekomendasi perlu divalidasi secara kualitatif dan akan lebih baik jika dataset diperluas pada tahap berikutnya."
+}

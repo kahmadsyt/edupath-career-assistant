@@ -1,0 +1,43 @@
+
+TAHAP 05 — Program Studi Recommender System & Roadmap Mapping
+
+Project:
+EduPath Career Assistant
+
+Tujuan:
+Membangun sistem rekomendasi program studi S1 berbasis profil teks, minat, mapel favorit,
+hobi, gaya belajar, dan tujuan karier user.
+
+Metode:
+1. Content-Based Filtering
+2. TF-IDF Vectorization
+3. Cosine Similarity
+4. Rule-Based Structured Scoring
+5. Roadmap Mapping
+6. Career Mapping
+7. Skill Mapping
+
+Formula Skor:
+Final Score = 0.65 * Text Similarity + 0.35 * Structured Score
+
+Dataset yang digunakan:
+1. intent_dataset_processed.csv       : 12 baris
+2. program_studi_s1_processed.csv     : 5 baris
+3. karier_processed.csv               : 5 baris
+4. skill_awal_processed.csv           : 7 baris
+5. roadmap_belajar_processed.csv      : 6 baris
+6. normalisasi_bahasa_processed.csv   : 18 baris
+
+Output:
+1. data/processed/program_recommender_profiles_stage05.csv
+2. reports/stage05/sample_recommendations_stage05.csv
+3. reports/stage05/roadmap_mapping_sample_stage05.csv
+4. models/program_recommender_tfidf_vectorizer.joblib
+5. models/program_recommender_matrix.joblib
+6. models/program_recommender_config_stage05.json
+
+Catatan Evaluasi:
+Sistem recommender ini sudah dapat menghasilkan Top-N program studi, alasan rekomendasi,
+prospek karier, skill awal, dan roadmap belajar. Namun, karena dataset masih kecil,
+hasil rekomendasi masih bersifat baseline dan perlu diperkuat dengan perluasan dataset
+serta validasi domain expert.
