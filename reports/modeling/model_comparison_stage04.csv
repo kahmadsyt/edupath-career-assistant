@@ -1,0 +1,4 @@
+model,accuracy,precision_weighted,recall_weighted,f1_weighted,f1_macro
+LinearSVC,0.5,0.5,0.5,0.5,0.3333333333333333
+Multinomial Naive Bayes,0.5,0.25,0.5,0.3333333333333333,0.3333333333333333
+Logistic Regression,0.0,0.0,0.0,0.0,0.0

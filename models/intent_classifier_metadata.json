@@ -1,0 +1,28 @@
+{
+    "project": "EduPath Career Assistant",
+    "stage": "Tahap 04 - Intent Classification Modeling",
+    "training_timestamp": "2026-06-14 14:33:31",
+    "dataset_path": "data\\processed\\intent_dataset_processed.csv",
+    "text_column": "utterance_preprocessed",
+    "target_column": "intent_label",
+    "best_model_name": "LinearSVC",
+    "labels": [
+        "fallback",
+        "info_program_studi",
+        "klarifikasi_minat",
+        "prospek_karier",
+        "rekomendasi_prodi",
+        "roadmap_belajar",
+        "sapaan",
+        "skill_awal"
+    ],
+    "metrics": {
+        "model": "LinearSVC",
+        "accuracy": 0.5,
+        "precision_weighted": 0.5,
+        "recall_weighted": 0.5,
+        "f1_weighted": 0.5,
+        "f1_macro": 0.3333333333333333
+    },
+    "notes": "Model ini merupakan baseline awal. Dataset masih kecil sehingga evaluasi belum dapat dianggap final."
+}

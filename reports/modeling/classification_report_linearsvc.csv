@@ -1,0 +1,12 @@
+,precision,recall,f1-score,support
+fallback,0.0,0.0,0.0,0.0
+info_program_studi,0.0,0.0,0.0,0.0
+klarifikasi_minat,0.0,0.0,0.0,0.0
+prospek_karier,0.0,0.0,0.0,0.0
+rekomendasi_prodi,1.0,1.0,1.0,1.0
+roadmap_belajar,0.0,0.0,0.0,1.0
+sapaan,0.0,0.0,0.0,0.0
+skill_awal,0.0,0.0,0.0,0.0
+accuracy,0.5,0.5,0.5,0.5
+macro avg,0.125,0.125,0.125,2.0
+weighted avg,0.5,0.5,0.5,2.0

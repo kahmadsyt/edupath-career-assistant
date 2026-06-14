@@ -1,0 +1,27 @@
+
+TAHAP 04 — Intent Classification Modeling
+
+Project:
+EduPath Career Assistant
+
+Dataset:
+data\processed\intent_dataset_processed.csv
+
+Jumlah data:
+12
+
+Jumlah intent:
+8
+
+Model terbaik:
+LinearSVC
+
+Metrik model terbaik:
+Accuracy           : 0.5000
+Precision Weighted : 0.5000
+Recall Weighted    : 0.5000
+F1 Weighted        : 0.5000
+F1 Macro           : 0.3333
+
+Catatan:
+Model ini merupakan baseline awal karena dataset masih kecil dan distribusi label belum seimbang.

@@ -1,0 +1,9 @@
+,fallback,info_program_studi,klarifikasi_minat,prospek_karier,rekomendasi_prodi,roadmap_belajar,sapaan,skill_awal
+fallback,0,0,0,0,0,0,0,0
+info_program_studi,0,0,0,0,0,0,0,0
+klarifikasi_minat,0,0,0,0,0,0,0,0
+prospek_karier,0,0,0,0,0,0,0,0
+rekomendasi_prodi,0,0,0,0,0,0,1,0
+roadmap_belajar,0,1,0,0,0,0,0,0
+sapaan,0,0,0,0,0,0,0,0
+skill_awal,0,0,0,0,0,0,0,0
