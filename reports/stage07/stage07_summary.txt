@@ -1,0 +1,42 @@
+TAHAP 07 — Chatbot Evaluation, Error Analysis & Scenario Testing
+
+Project:
+EduPath Career Assistant
+
+Generated at:
+2026-06-14 21:00:23
+
+Tujuan:
+Mengevaluasi pipeline chatbot dari Tahap 06 melalui dataset skenario uji,
+pengukuran intent routing, evaluasi isi respons, evaluasi program studi yang direkomendasikan,
+error analysis, dan visualisasi hasil evaluasi.
+
+Jumlah skenario uji:
+30
+
+Metrik utama:
+1. Intent accuracy              : 0.8667
+2. Response content accuracy    : 0.8667
+3. Top program accuracy         : 0.9500
+4. Overall pass rate            : 0.8667
+5. Strict pass rate             : 0.8667
+6. Confidence OK rate           : 1.0000
+
+Jumlah error/warning:
+4
+
+Output Stage 07:
+1. reports/stage07/chatbot_evaluation_scenarios_stage07.csv
+2. reports/stage07/chatbot_evaluation_results_stage07.csv
+3. reports/stage07/chatbot_error_analysis_stage07.csv
+4. reports/stage07/chatbot_evaluation_metrics_stage07.csv
+5. reports/stage07/chatbot_intent_summary_stage07.csv
+6. reports/stage07/chatbot_intent_classification_report_stage07.csv
+7. reports/stage07/chatbot_confidence_summary_stage07.csv
+8. reports/stage07/stage07_evaluation_report.md
+9. reports/stage07/stage07_summary.txt
+10. reports/stage07/figures/
+
+Catatan:
+Jika masih terdapat error, gunakan chatbot_error_analysis_stage07.csv sebagai dasar perbaikan dataset,
+rule intent routing, normalisasi bahasa, dan template respons chatbot.

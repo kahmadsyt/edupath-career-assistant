@@ -1,0 +1,31 @@
+﻿test_id,scenario_group,user_input,expected_intent,expected_top_program,expected_contains,expected_not_contains,min_routing_confidence,notes
+TC001,sapaan,"Halo kak, saya mau tanya tentang pilihan jurusan kuliah.",sapaan,,Halo;EduPath,Maaf,0.4,Mengukur respons awal chatbot terhadap sapaan formal.
+TC002,sapaan,"Assalamualaikum, boleh tanya rekomendasi kuliah?",sapaan,,Halo;rekomendasi,Maaf,0.4,Mengukur sapaan bernuansa salam.
+TC003,rekomendasi_formal,"Saya suka matematika, statistik, data, dan ingin menjadi data scientist. Program studi apa yang cocok?",rekomendasi_prodi,Sains Data,rekomendasi;program studi;Catatan,Maaf,0.4,Rekomendasi untuk profil data science.
+TC004,rekomendasi_formal,"Saya tertarik coding, algoritma, komputer, dan membuat aplikasi.",rekomendasi_prodi,Teknik Informatika,rekomendasi;program studi,Maaf,0.0,Rekomendasi untuk profil software engineering.
+TC005,rekomendasi_formal,"Saya suka proses bisnis, teknologi, analisis kebutuhan, dan ingin menjadi business analyst.",rekomendasi_prodi,Sistem Informasi,rekomendasi;program studi,Maaf,0.0,Rekomendasi untuk profil sistem informasi dan business analyst.
+TC006,rekomendasi_formal,"Saya suka matematika, peluang, statistik, dan analisis angka.",rekomendasi_prodi,,rekomendasi;program studi,Maaf,0.0,Profil statistik dapat mengarah ke Statistika atau Sains Data.
+TC007,rekomendasi_formal,"Saya suka menggambar, desain visual, membuat konten digital, dan warna.",rekomendasi_prodi,Desain Komunikasi Visual,rekomendasi;program studi,Maaf,0.0,Rekomendasi untuk profil desain visual.
+TC008,rekomendasi_nonformal,"Aku seneng ngoding dan bikin aplikasi, cocok kuliah apa ya?",rekomendasi_prodi,Teknik Informatika,rekomendasi;program studi,Maaf,0.4,Input non-formal Bahasa Indonesia.
+TC009,rekomendasi_nonformal,"Aku suka ngolah data, bikin dashboard, sama lihat pola angka.",rekomendasi_prodi,Sains Data,rekomendasi;program studi,Maaf,0.0,Input non-formal untuk profil analitik data.
+TC010,bahasa_jawa,"Aku pengin dadi analis data, jurusan sing pas apa?",rekomendasi_prodi,Sains Data,rekomendasi;program studi,Maaf,0.4,Input Bahasa Jawa umum untuk data analyst.
+TC011,bahasa_jawa,"Aku seneng komputer lan nggawe aplikasi, prodi sing cocok apa?",rekomendasi_prodi,Teknik Informatika,rekomendasi;program studi,Maaf,0.4,Input Bahasa Jawa umum untuk software/application development.
+TC012,bahasa_sunda,"Abdi resep komputer jeung angka, prodi naon nu cocog?",rekomendasi_prodi,Sains Data,rekomendasi;program studi,Maaf,0.4,Input Bahasa Sunda umum untuk komputer dan angka.
+TC013,bahasa_sunda,"Abdi resep desain gambar jeung konten digital, jurusan naon nu pas?",rekomendasi_prodi,Desain Komunikasi Visual,rekomendasi;program studi,Maaf,0.0,Input Bahasa Sunda umum untuk desain visual.
+TC014,roadmap,"Kalau saya mau masuk Sains Data, harus belajar apa dulu?",roadmap_belajar,Sains Data,Roadmap belajar awal;Fase,Maaf,0.4,Roadmap belajar Sains Data.
+TC015,roadmap,Roadmap belajar Teknik Informatika dari awal itu seperti apa?,roadmap_belajar,Teknik Informatika,Roadmap belajar awal;Fase,Maaf,0.4,Roadmap belajar Teknik Informatika.
+TC016,prospek_karier,Prospek kerja Sistem Informasi itu apa saja?,prospek_karier,Sistem Informasi,Prospek karier;Tugas utama,Maaf,0.4,Prospek karier untuk Sistem Informasi.
+TC017,prospek_karier,Kalau kuliah Teknik Informatika nanti kerja apa?,prospek_karier,Teknik Informatika,Prospek karier,Maaf,0.4,Prospek karier untuk Teknik Informatika.
+TC018,skill_awal,Skill awal untuk menjadi UI UX Designer apa saja?,skill_awal,Desain Komunikasi Visual,Skill awal;Estimasi belajar,Maaf,0.4,Skill awal untuk UI/UX atau DKV.
+TC019,skill_awal,"Kalau ingin belajar Sains Data, skill dasar apa yang perlu saya kuasai?",skill_awal,Sains Data,Skill awal;Estimasi belajar,Maaf,0.4,Skill awal untuk Sains Data.
+TC020,info_program_studi,Apa itu Teknik Informatika?,info_program_studi,Teknik Informatika,Informasi singkat;Deskripsi,Maaf,0.4,Informasi program studi Teknik Informatika.
+TC021,info_program_studi,Jelaskan Sistem Informasi mempelajari apa.,info_program_studi,Sistem Informasi,Informasi singkat;Deskripsi,Maaf,0.4,Informasi program studi Sistem Informasi.
+TC022,info_program_studi,Info tentang Desain Komunikasi Visual dong.,info_program_studi,Desain Komunikasi Visual,Informasi singkat;Deskripsi,Maaf,0.4,Informasi program studi DKV.
+TC023,klarifikasi_minat,Saya masih bingung dan belum tahu minat saya cocok ke jurusan apa.,klarifikasi_minat,,mata pelajaran;hobi;karier,Maaf,0.4,Chatbot perlu meminta klarifikasi minat.
+TC024,klarifikasi_minat,"Belum tau minat saya apa, masih ragu mau kuliah apa.",klarifikasi_minat,,mata pelajaran;hobi;karier,Maaf,0.4,Input kebingungan pemilihan jurusan.
+TC025,fallback,Saya ingin beli sepatu olahraga.,fallback,,Maaf;saya belum memahami,Berikut rekomendasi,0.0,Pertanyaan di luar domain chatbot.
+TC026,fallback,Resep nasi goreng yang enak bagaimana?,fallback,,Maaf,Berikut rekomendasi,0.0,Pertanyaan kuliner di luar domain.
+TC027,edge_case,   ,fallback,,Maaf,Berikut rekomendasi,0.0,Input kosong atau hanya spasi.
+TC028,edge_case,asdf qwerty zzz jurusan,rekomendasi_prodi,,rekomendasi,,0.0,Input noise tetapi mengandung kata jurusan.
+TC029,mixed_interest,"Saya suka data tetapi juga suka desain, enaknya pilih prodi apa?",rekomendasi_prodi,,rekomendasi;program studi,Maaf,0.4,Minat campuran; cukup dievaluasi intent dan struktur respons.
+TC030,prospek_karier,Apa saja prospek kerja Sains Data?,prospek_karier,Sains Data,Prospek karier,Maaf,0.4,Prospek karier untuk Sains Data.

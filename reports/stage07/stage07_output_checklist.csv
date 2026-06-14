@@ -1,0 +1,17 @@
+﻿file,exists,size_bytes
+notebooks\07_chatbot_evaluation_error_analysis.ipynb,True,382752
+reports\stage07\chatbot_evaluation_scenarios_stage07.csv,True,5538
+reports\stage07\chatbot_evaluation_results_stage07.csv,True,37406
+reports\stage07\chatbot_error_analysis_stage07.csv,True,7063
+reports\stage07\chatbot_evaluation_metrics_stage07.csv,True,199
+reports\stage07\chatbot_intent_summary_stage07.csv,True,312
+reports\stage07\chatbot_intent_classification_report_stage07.csv,True,424
+reports\stage07\chatbot_confidence_summary_stage07.csv,True,168
+reports\stage07\stage07_evaluation_report.md,True,2764
+reports\stage07\stage07_summary.txt,True,1442
+reports\stage07\figures\evaluation_status_distribution.png,True,23181
+reports\stage07\figures\intent_accuracy_by_intent.png,True,44744
+reports\stage07\figures\intent_confusion_matrix.png,True,99099
+reports\stage07\figures\error_type_distribution.png,True,34488
+reports\stage07\figures\routing_confidence_by_source.png,True,38160
+reports\stage07\stage07_output_checklist.csv,True,993

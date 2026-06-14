@@ -1,0 +1,9 @@
+﻿expected_intent,total_cases,correct_intent,intent_accuracy,overall_pass_rate
+fallback,3,2,0.6667,0.6667
+info_program_studi,3,3,1.0,1.0
+klarifikasi_minat,2,0,0.0,0.0
+prospek_karier,3,3,1.0,1.0
+rekomendasi_prodi,13,12,0.9231,0.9231
+roadmap_belajar,2,2,1.0,1.0
+sapaan,2,2,1.0,1.0
+skill_awal,2,2,1.0,1.0

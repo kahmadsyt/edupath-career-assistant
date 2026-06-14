@@ -1,0 +1,3 @@
+﻿routing_source,total_cases,avg_model_confidence,avg_rule_confidence,avg_routing_confidence
+fallback_threshold,3,0.1683,0.0,0.0
+rule_based,27,0.2136,0.7704,0.7704

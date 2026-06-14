@@ -1,0 +1,74 @@
+﻿test_id,scenario_group,user_input,expected_intent,final_intent,intent_correct,routing_source,model_predicted_intent,model_confidence,rule_intent,rule_confidence,routing_confidence,min_routing_confidence,confidence_ok,matched_rule_keywords,processed_text,expected_top_program,actual_top_program,top_program_applicable,top_program_correct,expected_contains,expected_not_contains,response_not_empty,contains_ok,not_contains_ok,response_content_ok,overall_pass,strict_pass,response_length_chars,response_text,runtime_error,notes,overall_status,strict_status,error_type,error_severity,improvement_suggestion
+TC004,rekomendasi_formal,"Saya tertarik coding, algoritma, komputer, dan membuat aplikasi.",rekomendasi_prodi,fallback,False,fallback_threshold,rekomendasi_prodi,0.2094,,0.0,0.0,0.0,True,,tertarik pemrograman algoritma komputer membuat aplikasi,Teknik Informatika,,True,False,rekomendasi;program studi,Maaf,True,False,False,False,False,False,203,"Maaf, saya belum memahami pertanyaan Anda. Coba jelaskan minat, mata pelajaran favorit, hobi, gaya belajar, atau tujuan karier Anda. Contoh: 'Saya suka matematika dan data, program studi apa yang cocok?'",,Rekomendasi untuk profil software engineering.,FAIL,FAIL/WARNING,Intent Routing Error; Recommendation Mapping Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Perkaya profil program studi dengan keyword minat, hobi, mapel, dan tujuan karier yang lebih representatif. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."
+TC023,klarifikasi_minat,Saya masih bingung dan belum tahu minat saya cocok ke jurusan apa.,klarifikasi_minat,rekomendasi_prodi,False,rule_based,klarifikasi_minat,0.2717,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, jurusan, cocok, minat",masih bingung belum tahu minat program studi,,Teknik Informatika,False,True,mata pelajaran;hobi;karier,Maaf,True,False,True,False,False,False,1089,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+3. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Chatbot perlu meminta klarifikasi minat.,FAIL,FAIL/WARNING,Intent Routing Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."
+TC024,klarifikasi_minat,"Belum tau minat saya apa, masih ragu mau kuliah apa.",klarifikasi_minat,rekomendasi_prodi,False,rule_based,sapaan,0.16,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, kuliah apa, minat",belum tau minat masih ragu program studi,,Teknik Informatika,False,True,mata pelajaran;hobi;karier,Maaf,True,False,True,False,False,False,1089,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+3. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input kebingungan pemilihan jurusan.,FAIL,FAIL/WARNING,Intent Routing Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."
+TC026,fallback,Resep nasi goreng yang enak bagaimana?,fallback,rekomendasi_prodi,False,rule_based,rekomendasi_prodi,0.2483,rekomendasi_prodi,0.6,0.6,0.0,True,suka,suka nasi goreng enak,,Teknik Informatika,False,True,Maaf,Berikut rekomendasi,True,False,False,False,False,False,1103,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `suka`.
+   - Skor akhir: 0.1163
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `suka`.
+   - Skor akhir: 0.1078
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+3. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Pertanyaan kuliner di luar domain.,FAIL,FAIL/WARNING,Fallback Error; Intent Routing Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Tambahkan negative/off-domain examples pada dataset intent agar chatbot lebih kuat membedakan input di luar domain. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."

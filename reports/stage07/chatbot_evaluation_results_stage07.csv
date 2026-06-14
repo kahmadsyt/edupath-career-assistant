@@ -1,0 +1,470 @@
+﻿test_id,scenario_group,user_input,expected_intent,final_intent,intent_correct,routing_source,model_predicted_intent,model_confidence,rule_intent,rule_confidence,routing_confidence,min_routing_confidence,confidence_ok,matched_rule_keywords,processed_text,expected_top_program,actual_top_program,top_program_applicable,top_program_correct,expected_contains,expected_not_contains,response_not_empty,contains_ok,not_contains_ok,response_content_ok,overall_pass,strict_pass,response_length_chars,response_text,runtime_error,notes,overall_status,strict_status,error_type,error_severity,improvement_suggestion
+TC001,sapaan,"Halo kak, saya mau tanya tentang pilihan jurusan kuliah.",sapaan,sapaan,True,rule_based,sapaan,0.2121,sapaan,0.6,0.6,0.4,True,halo,halo kak tanya tentang pilihan program studi program studi,,,False,True,Halo;EduPath,Maaf,True,True,True,True,True,True,258,"Halo, saya EduPath Career Assistant. Saya bisa membantu memberikan rekomendasi program studi S1, roadmap belajar awal, prospek karier, dan skill awal berdasarkan minat Anda. Silakan ceritakan minat, mapel favorit, hobi, gaya belajar, atau tujuan karier Anda.",,Mengukur respons awal chatbot terhadap sapaan formal.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC002,sapaan,"Assalamualaikum, boleh tanya rekomendasi kuliah?",sapaan,sapaan,True,rule_based,sapaan,0.1813,sapaan,0.6,0.6,0.4,True,assalamualaikum,assalamualaikum boleh tanya rekomendasi program studi,,,False,True,Halo;rekomendasi,Maaf,True,True,True,True,True,True,258,"Halo, saya EduPath Career Assistant. Saya bisa membantu memberikan rekomendasi program studi S1, roadmap belajar awal, prospek karier, dan skill awal berdasarkan minat Anda. Silakan ceritakan minat, mapel favorit, hobi, gaya belajar, atau tujuan karier Anda.",,Mengukur sapaan bernuansa salam.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC003,rekomendasi_formal,"Saya suka matematika, statistik, data, dan ingin menjadi data scientist. Program studi apa yang cocok?",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2244,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, cocok, suka",suka matematika statistik data menjadi data scientist program studi,Sains Data,Sains Data,True,True,rekomendasi;program studi;Catatan,Maaf,True,True,True,True,True,True,1132,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `data, matematika, scientist, statistik, suka`.
+   - Skor akhir: 0.4133
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+2. Statistika (S1)
+   - Bidang: Statistika Terapan
+   - Alasan: cocok dengan keyword `data, matematika, scientist, statistik`.
+   - Skor akhir: 0.3566
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Analisis Data Dasar, Statistika Dasar
+
+3. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `data, matematika, suka`.
+   - Skor akhir: 0.1652
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Rekomendasi untuk profil data science.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC004,rekomendasi_formal,"Saya tertarik coding, algoritma, komputer, dan membuat aplikasi.",rekomendasi_prodi,fallback,False,fallback_threshold,rekomendasi_prodi,0.2094,,0.0,0.0,0.0,True,,tertarik pemrograman algoritma komputer membuat aplikasi,Teknik Informatika,,True,False,rekomendasi;program studi,Maaf,True,False,False,False,False,False,203,"Maaf, saya belum memahami pertanyaan Anda. Coba jelaskan minat, mata pelajaran favorit, hobi, gaya belajar, atau tujuan karier Anda. Contoh: 'Saya suka matematika dan data, program studi apa yang cocok?'",,Rekomendasi untuk profil software engineering.,FAIL,FAIL/WARNING,Intent Routing Error; Recommendation Mapping Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Perkaya profil program studi dengan keyword minat, hobi, mapel, dan tujuan karier yang lebih representatif. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."
+TC005,rekomendasi_formal,"Saya suka proses bisnis, teknologi, analisis kebutuhan, dan ingin menjadi business analyst.",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.1834,rekomendasi_prodi,0.6,0.6,0.0,True,suka,suka proses bisnis teknologi analisis kebutuhan menjadi business analyst,Sistem Informasi,Sistem Informasi,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1158,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword `analisis, analyst, bisnis, business, kebutuhan, proses, teknologi`.
+   - Skor akhir: 0.6156
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+2. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `analisis, analyst, bisnis, suka`.
+   - Skor akhir: 0.1928
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+3. Statistika (S1)
+   - Bidang: Statistika Terapan
+   - Alasan: cocok dengan keyword `analisis, analyst, bisnis`.
+   - Skor akhir: 0.1638
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Rekomendasi untuk profil sistem informasi dan business analyst.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC006,rekomendasi_formal,"Saya suka matematika, peluang, statistik, dan analisis angka.",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2698,rekomendasi_prodi,0.6,0.6,0.0,True,suka,suka matematika peluang statistik analisis angka,,Sains Data,False,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1139,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `analisis, angka, matematika, statistik, suka`.
+   - Skor akhir: 0.3436
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+2. Statistika (S1)
+   - Bidang: Statistika Terapan
+   - Alasan: cocok dengan keyword `analisis, angka, matematika, statistik`.
+   - Skor akhir: 0.2974
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Analisis Data Dasar, Statistika Dasar
+
+3. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword `analisis, matematika`.
+   - Skor akhir: 0.1681
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Profil statistik dapat mengarah ke Statistika atau Sains Data.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC007,rekomendasi_formal,"Saya suka menggambar, desain visual, membuat konten digital, dan warna.",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2483,rekomendasi_prodi,0.6,0.6,0.0,True,suka,suka menggambar desain visual membuat konten digital warna,Desain Komunikasi Visual,Desain Komunikasi Visual,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1106,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Desain Komunikasi Visual (S1)
+   - Bidang: Desain Visual dan Komunikasi Digital
+   - Alasan: cocok dengan keyword `desain, digital, konten, membuat, menggambar, visual`.
+   - Skor akhir: 0.5416
+   - Prospek karier: UI/UX Designer
+   - Skill awal: Dasar Desain Visual
+
+2. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `membuat, suka`.
+   - Skor akhir: 0.0964
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+3. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `membuat, suka`.
+   - Skor akhir: 0.0938
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Rekomendasi untuk profil desain visual.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC008,rekomendasi_nonformal,"Aku seneng ngoding dan bikin aplikasi, cocok kuliah apa ya?",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2287,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, cocok, kuliah apa, suka",suka pemrograman bikin aplikasi program studi,Teknik Informatika,Teknik Informatika,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1080,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `aplikasi, pemrograman, suka`.
+   - Skor akhir: 0.2748
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `pemrograman, suka`.
+   - Skor akhir: 0.1377
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+3. Desain Komunikasi Visual (S1)
+   - Bidang: Desain Visual dan Komunikasi Digital
+   - Alasan: cocok dengan keyword `aplikasi`.
+   - Skor akhir: 0.0669
+   - Prospek karier: UI/UX Designer
+   - Skill awal: Dasar Desain Visual
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input non-formal Bahasa Indonesia.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC009,rekomendasi_nonformal,"Aku suka ngolah data, bikin dashboard, sama lihat pola angka.",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2252,rekomendasi_prodi,0.6,0.6,0.0,True,suka,suka ngolah data bikin dashboard sama lihat pola angka,Sains Data,Sains Data,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1108,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `angka, dashboard, data, pola, suka`.
+   - Skor akhir: 0.3497
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+2. Statistika (S1)
+   - Bidang: Statistika Terapan
+   - Alasan: cocok dengan keyword `angka, dashboard, data`.
+   - Skor akhir: 0.2326
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Analisis Data Dasar, Statistika Dasar
+
+3. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword `dashboard, data`.
+   - Skor akhir: 0.1443
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input non-formal untuk profil analitik data.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC010,bahasa_jawa,"Aku pengin dadi analis data, jurusan sing pas apa?",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.1643,rekomendasi_prodi,0.8,0.8,0.4,True,"program studi, jurusan",menjadi analis data program studi,Sains Data,Sains Data,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1072,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `analis, data`.
+   - Skor akhir: 0.2332
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+2. Statistika (S1)
+   - Bidang: Statistika Terapan
+   - Alasan: cocok dengan keyword `analis, data`.
+   - Skor akhir: 0.2173
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Analisis Data Dasar, Statistika Dasar
+
+3. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword `analis, data`.
+   - Skor akhir: 0.194
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input Bahasa Jawa umum untuk data analyst.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC011,bahasa_jawa,"Aku seneng komputer lan nggawe aplikasi, prodi sing cocok apa?",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2145,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, prodi, cocok, suka",suka komputer lan nggawe aplikasi program studi,Teknik Informatika,Teknik Informatika,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1074,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `aplikasi, komputer, suka`.
+   - Skor akhir: 0.2319
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `komputer, suka`.
+   - Skor akhir: 0.1149
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+3. Desain Komunikasi Visual (S1)
+   - Bidang: Desain Visual dan Komunikasi Digital
+   - Alasan: cocok dengan keyword `aplikasi`.
+   - Skor akhir: 0.0585
+   - Prospek karier: UI/UX Designer
+   - Skill awal: Dasar Desain Visual
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input Bahasa Jawa umum untuk software/application development.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC012,bahasa_sunda,"Abdi resep komputer jeung angka, prodi naon nu cocog?",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2565,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, prodi, suka",abdi suka komputer jeung angka program studi nu cocog,Sains Data,Sains Data,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1067,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `angka, komputer, suka`.
+   - Skor akhir: 0.1349
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+2. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `komputer, suka`.
+   - Skor akhir: 0.1024
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+3. Statistika (S1)
+   - Bidang: Statistika Terapan
+   - Alasan: cocok dengan keyword `angka`.
+   - Skor akhir: 0.047
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input Bahasa Sunda umum untuk komputer dan angka.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC013,bahasa_sunda,"Abdi resep desain gambar jeung konten digital, jurusan naon nu pas?",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2145,rekomendasi_prodi,1.0,1.0,0.0,True,"program studi, jurusan, suka",abdi suka desain gambar jeung konten digital program studi nu,Desain Komunikasi Visual,Desain Komunikasi Visual,True,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1059,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Desain Komunikasi Visual (S1)
+   - Bidang: Desain Visual dan Komunikasi Digital
+   - Alasan: cocok dengan keyword `desain, digital, konten`.
+   - Skor akhir: 0.2426
+   - Prospek karier: UI/UX Designer
+   - Skill awal: Dasar Desain Visual
+
+2. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `suka`.
+   - Skor akhir: 0.0425
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+3. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `suka`.
+   - Skor akhir: 0.0403
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input Bahasa Sunda umum untuk desain visual.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC014,roadmap,"Kalau saya mau masuk Sains Data, harus belajar apa dulu?",roadmap_belajar,roadmap_belajar,True,rule_based,roadmap_belajar,0.2046,roadmap_belajar,0.8,0.8,0.4,True,"belajar apa, harus belajar",sains data belajar,Sains Data,Sains Data,True,True,Roadmap belajar awal;Fase,Maaf,True,True,True,True,True,True,643,"Roadmap belajar awal untuk Sains Data (S1):
+
+Fase 1 — Fondasi (1-2 bulan)
+- Tujuan: Memahami dasar Python, statistik, dan pengolahan data.
+- Materi pokok: Python dasar|Pandas|statistika deskriptif
+- Aktivitas praktik: membersihkan dataset sederhana dan membuat grafik
+- Output portofolio: notebook EDA sederhana
+- Tools: Python|Jupyter|Pandas
+
+Fase 2 — Penguatan (2-3 bulan)
+- Tujuan: Memahami machine learning dasar dan evaluasi model.
+- Materi pokok: supervised learning|train test split|accuracy|F1-score
+- Aktivitas praktik: membuat model klasifikasi sederhana
+- Output portofolio: notebook model klasifikasi
+- Tools: Scikit-learn|Jupyter
+",,Roadmap belajar Sains Data.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC015,roadmap,Roadmap belajar Teknik Informatika dari awal itu seperti apa?,roadmap_belajar,roadmap_belajar,True,rule_based,info_program_studi,0.2107,roadmap_belajar,0.6,0.6,0.4,True,roadmap,roadmap belajar teknik informatika awal seperti,Teknik Informatika,Teknik Informatika,True,True,Roadmap belajar awal;Fase,Maaf,True,True,True,True,True,True,689,"Roadmap belajar awal untuk Teknik Informatika (S1):
+
+Fase 1 — Fondasi (1-2 bulan)
+- Tujuan: Memahami logika dan dasar pemrograman.
+- Materi pokok: logika algoritma|Python dasar|Git dasar
+- Aktivitas praktik: membuat program kalkulator sederhana|latihan percabangan dan perulangan
+- Output portofolio: repo GitHub berisi latihan Python dasar
+- Tools: Python|VS Code|GitHub
+
+Fase 2 — Penguatan (2-3 bulan)
+- Tujuan: Memahami basis data dan pengembangan aplikasi sederhana.
+- Materi pokok: SQL dasar|CRUD|HTML CSS dasar|API sederhana
+- Aktivitas praktik: membuat aplikasi catatan sederhana dengan database
+- Output portofolio: aplikasi CRUD sederhana
+- Tools: SQLite|PostgreSQL|Flask/FastAPI
+",,Roadmap belajar Teknik Informatika.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC016,prospek_karier,Prospek kerja Sistem Informasi itu apa saja?,prospek_karier,prospek_karier,True,rule_based,prospek_karier,0.2087,prospek_karier,0.6,0.6,0.4,True,prospek kerja,prospek kerja sistem informasi saja,Sistem Informasi,Sistem Informasi,True,True,Prospek karier;Tugas utama,Maaf,True,True,True,True,True,True,390,"Prospek karier yang relevan untuk Sistem Informasi:
+
+- Business Analyst (Bisnis dan Teknologi)
+  Tugas utama: requirement gathering|process mapping|dokumentasi
+  Skill teknis: Analisis proses|SQL dasar|UML|komunikasi bisnis
+- Data Analyst (Data dan Analitik)
+  Tugas utama: membersihkan data|membuat dashboard|menyusun laporan insight
+  Skill teknis: Excel|SQL|Python dasar|visualisasi data",,Prospek karier untuk Sistem Informasi.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC017,prospek_karier,Kalau kuliah Teknik Informatika nanti kerja apa?,prospek_karier,prospek_karier,True,rule_based,info_program_studi,0.1938,prospek_karier,0.6,0.6,0.4,True,kerja apa,program studi teknik informatika nanti kerja,Teknik Informatika,Teknik Informatika,True,True,Prospek karier,Maaf,True,True,True,True,True,True,209,"Prospek karier yang relevan untuk Teknik Informatika:
+
+- Software Engineer (Software Development)
+  Tugas utama: coding|testing|debugging|deploy aplikasi
+  Skill teknis: Algoritma|Git|Database|Backend|Frontend",,Prospek karier untuk Teknik Informatika.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC018,skill_awal,Skill awal untuk menjadi UI UX Designer apa saja?,skill_awal,skill_awal,True,rule_based,skill_awal,0.2718,skill_awal,0.6,0.6,0.4,True,skill,skill awal menjadi ui ux designer saja,Desain Komunikasi Visual,Desain Komunikasi Visual,True,True,Skill awal;Estimasi belajar,Maaf,True,True,True,True,True,True,262,"Skill awal yang disarankan untuk Desain Komunikasi Visual:
+
+- Dasar Desain Visual
+  Deskripsi: Memahami warna, tipografi, layout, komposisi, dan prinsip komunikasi visual.
+  Estimasi belajar: 3-5 minggu
+  Sumber belajar awal: Canva|Figma|latihan poster sederhana",,Skill awal untuk UI/UX atau DKV.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC019,skill_awal,"Kalau ingin belajar Sains Data, skill dasar apa yang perlu saya kuasai?",skill_awal,skill_awal,True,rule_based,roadmap_belajar,0.1809,skill_awal,0.8,0.8,0.4,True,"skill, dasar apa",belajar sains data skill dasar perlu kuasai,Sains Data,Sains Data,True,True,Skill awal;Estimasi belajar,Maaf,True,True,True,True,True,True,941,"Skill awal yang disarankan untuk Sains Data:
+
+- Dasar Pemrograman Python
+  Deskripsi: Memahami variabel, tipe data, percabangan, perulangan, fungsi, dan struktur data sederhana.
+  Estimasi belajar: 4-6 minggu
+  Sumber belajar awal: Dokumentasi Python|tutorial dasar Python|latihan coding
+- Dasar Basis Data dan SQL
+  Deskripsi: Memahami tabel, relasi, query SELECT, filter, join, agregasi, dan pengelolaan data sederhana.
+  Estimasi belajar: 3-5 minggu
+  Sumber belajar awal: Latihan SQL sederhana|SQLite|PostgreSQL dasar
+- Analisis Data Dasar
+  Deskripsi: Memahami cara membaca data, statistik deskriptif, pola data, dan insight sederhana.
+  Estimasi belajar: 3-4 minggu
+  Sumber belajar awal: Excel|Google Sheets|dataset sederhana
+- Statistika Dasar
+  Deskripsi: Memahami mean, median, modus, variansi, probabilitas dasar, dan interpretasi grafik.
+  Estimasi belajar: 4-6 minggu
+  Sumber belajar awal: Latihan statistik dengan Excel/Python",,Skill awal untuk Sains Data.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC020,info_program_studi,Apa itu Teknik Informatika?,info_program_studi,info_program_studi,True,rule_based,info_program_studi,0.2579,info_program_studi,0.8,0.8,0.4,True,"apa itu, info",teknik informatika,Teknik Informatika,Teknik Informatika,True,True,Informasi singkat;Deskripsi,Maaf,True,True,True,True,True,True,471,"Informasi singkat tentang Teknik Informatika (S1):
+
+- Rumpun ilmu: Komputer
+- Bidang keilmuan: Software Engineering dan Komputasi
+- Deskripsi: Mempelajari pemrograman, algoritma, basis data, jaringan, dan pengembangan perangkat lunak.
+- Minat yang cocok: coding|logika|komputer|aplikasi
+- Mata pelajaran relevan: Matematika|Informatika
+- Prospek karier: Software Engineer
+- Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar",,Informasi program studi Teknik Informatika.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC021,info_program_studi,Jelaskan Sistem Informasi mempelajari apa.,info_program_studi,info_program_studi,True,rule_based,prospek_karier,0.1928,info_program_studi,1.0,1.0,0.4,True,"jelaskan, informasi, info, mempelajari apa",jelaskan sistem informasi mempelajari,Sistem Informasi,Sistem Informasi,True,True,Informasi singkat;Deskripsi,Maaf,True,True,True,True,True,True,500,"Informasi singkat tentang Sistem Informasi (S1):
+
+- Rumpun ilmu: Komputer
+- Bidang keilmuan: Sistem Bisnis dan Teknologi Informasi
+- Deskripsi: Mempelajari integrasi teknologi, proses bisnis, analisis kebutuhan, dan manajemen sistem informasi.
+- Minat yang cocok: bisnis|teknologi|analisis|manajemen
+- Mata pelajaran relevan: Ekonomi|Informatika|Matematika
+- Prospek karier: Business Analyst, Data Analyst
+- Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan",,Informasi program studi Sistem Informasi.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC022,info_program_studi,Info tentang Desain Komunikasi Visual dong.,info_program_studi,info_program_studi,True,rule_based,rekomendasi_prodi,0.1477,info_program_studi,0.6,0.6,0.4,True,info,info tentang desain komunikasi visual,Desain Komunikasi Visual,Desain Komunikasi Visual,True,True,Informasi singkat;Deskripsi,Maaf,True,True,True,True,True,True,404,"Informasi singkat tentang Desain Komunikasi Visual (S1):
+
+- Rumpun ilmu: Seni dan Desain
+- Bidang keilmuan: Desain Visual dan Komunikasi Digital
+- Deskripsi: Mempelajari desain grafis, branding, ilustrasi, UI, komunikasi visual, dan media digital.
+- Minat yang cocok: desain|visual|kreatif|media
+- Mata pelajaran relevan: Seni Budaya|TIK
+- Prospek karier: UI/UX Designer
+- Skill awal: Dasar Desain Visual",,Informasi program studi DKV.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC023,klarifikasi_minat,Saya masih bingung dan belum tahu minat saya cocok ke jurusan apa.,klarifikasi_minat,rekomendasi_prodi,False,rule_based,klarifikasi_minat,0.2717,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, jurusan, cocok, minat",masih bingung belum tahu minat program studi,,Teknik Informatika,False,True,mata pelajaran;hobi;karier,Maaf,True,False,True,False,False,False,1089,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+3. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Chatbot perlu meminta klarifikasi minat.,FAIL,FAIL/WARNING,Intent Routing Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."
+TC024,klarifikasi_minat,"Belum tau minat saya apa, masih ragu mau kuliah apa.",klarifikasi_minat,rekomendasi_prodi,False,rule_based,sapaan,0.16,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, kuliah apa, minat",belum tau minat masih ragu program studi,,Teknik Informatika,False,True,mata pelajaran;hobi;karier,Maaf,True,False,True,False,False,False,1089,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+3. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input kebingungan pemilihan jurusan.,FAIL,FAIL/WARNING,Intent Routing Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."
+TC025,fallback,Saya ingin beli sepatu olahraga.,fallback,fallback,True,fallback_threshold,rekomendasi_prodi,0.1477,,0.0,0.0,0.0,True,,beli sepatu olahraga,,,False,True,Maaf;saya belum memahami,Berikut rekomendasi,True,True,True,True,True,True,203,"Maaf, saya belum memahami pertanyaan Anda. Coba jelaskan minat, mata pelajaran favorit, hobi, gaya belajar, atau tujuan karier Anda. Contoh: 'Saya suka matematika dan data, program studi apa yang cocok?'",,Pertanyaan di luar domain chatbot.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC026,fallback,Resep nasi goreng yang enak bagaimana?,fallback,rekomendasi_prodi,False,rule_based,rekomendasi_prodi,0.2483,rekomendasi_prodi,0.6,0.6,0.0,True,suka,suka nasi goreng enak,,Teknik Informatika,False,True,Maaf,Berikut rekomendasi,True,False,False,False,False,False,1103,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `suka`.
+   - Skor akhir: 0.1163
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `suka`.
+   - Skor akhir: 0.1078
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+3. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Pertanyaan kuliner di luar domain.,FAIL,FAIL/WARNING,Fallback Error; Intent Routing Error; Response Content Error,High,"Tambahkan contoh utterance untuk intent terkait dan perkuat rule keyword pada intent routing. Tambahkan negative/off-domain examples pada dataset intent agar chatbot lebih kuat membedakan input di luar domain. Perbaiki template respons agar selalu memuat elemen minimum yang diharapkan, seperti catatan, fase, skill, atau deskripsi."
+TC027,edge_case,   ,fallback,fallback,True,fallback_threshold,rekomendasi_prodi,0.1477,,0.0,0.0,0.0,True,,,,,False,True,Maaf,Berikut rekomendasi,True,True,True,True,True,True,203,"Maaf, saya belum memahami pertanyaan Anda. Coba jelaskan minat, mata pelajaran favorit, hobi, gaya belajar, atau tujuan karier Anda. Contoh: 'Saya suka matematika dan data, program studi apa yang cocok?'",,Input kosong atau hanya spasi.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC028,edge_case,asdf qwerty zzz jurusan,rekomendasi_prodi,rekomendasi_prodi,True,rule_based,fallback,0.2008,rekomendasi_prodi,0.8,0.8,0.0,True,"program studi, jurusan",asdf qwerty zzz program studi,,Teknik Informatika,False,True,rekomendasi,,True,True,True,True,True,True,1089,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+2. Sistem Informasi (S1)
+   - Bidang: Sistem Bisnis dan Teknologi Informasi
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Business Analyst, Data Analyst
+   - Skill awal: Dasar Basis Data dan SQL, Analisis Data Dasar, Komunikasi dan Analisis Kebutuhan
+
+3. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword ``.
+   - Skor akhir: 0.0
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Input noise tetapi mengandung kata jurusan.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC029,mixed_interest,"Saya suka data tetapi juga suka desain, enaknya pilih prodi apa?",rekomendasi_prodi,rekomendasi_prodi,True,rule_based,rekomendasi_prodi,0.2048,rekomendasi_prodi,1.0,1.0,0.4,True,"program studi, prodi, pilih, suka",suka data tetapi juga suka desain enaknya program studi,,Sains Data,False,True,rekomendasi;program studi,Maaf,True,True,True,True,True,True,1053,"Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:
+
+1. Sains Data (S1)
+   - Bidang: Data Science dan Analitik
+   - Alasan: cocok dengan keyword `data, suka`.
+   - Skor akhir: 0.1669
+   - Prospek karier: Data Analyst, Data Scientist
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Analisis Data Dasar, Statistika Dasar
+
+2. Desain Komunikasi Visual (S1)
+   - Bidang: Desain Visual dan Komunikasi Digital
+   - Alasan: cocok dengan keyword `desain`.
+   - Skor akhir: 0.1282
+   - Prospek karier: UI/UX Designer
+   - Skill awal: Dasar Desain Visual
+
+3. Teknik Informatika (S1)
+   - Bidang: Software Engineering dan Komputasi
+   - Alasan: cocok dengan keyword `data, suka`.
+   - Skor akhir: 0.118
+   - Prospek karier: Software Engineer
+   - Skill awal: Dasar Pemrograman Python, Dasar Basis Data dan SQL, Algoritma dan Struktur Data Dasar
+
+Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali dengan minat, nilai akademik, portofolio, serta konsultasi dengan guru BK atau pembimbing akademik.",,Minat campuran; cukup dievaluasi intent dan struktur respons.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
+TC030,prospek_karier,Apa saja prospek kerja Sains Data?,prospek_karier,prospek_karier,True,rule_based,roadmap_belajar,0.1887,prospek_karier,0.6,0.6,0.4,True,prospek kerja,saja prospek kerja sains data,Sains Data,Sains Data,True,True,Prospek karier,Maaf,True,True,True,True,True,True,362,"Prospek karier yang relevan untuk Sains Data:
+
+- Data Analyst (Data dan Analitik)
+  Tugas utama: membersihkan data|membuat dashboard|menyusun laporan insight
+  Skill teknis: Excel|SQL|Python dasar|visualisasi data
+- Data Scientist (Data dan AI)
+  Tugas utama: EDA|feature engineering|modeling|evaluasi model
+  Skill teknis: Python|SQL|Machine Learning|Statistika",,Prospek karier untuk Sains Data.,PASS,PASS,OK,OK,Tidak diperlukan perbaikan khusus.
