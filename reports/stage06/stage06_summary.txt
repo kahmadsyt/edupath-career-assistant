@@ -4,7 +4,7 @@ Project:
 EduPath Career Assistant
 
 Generated at:
-2026-06-14 20:33:11
+2026-06-14 20:58:03
 
 Tujuan:
 Mengintegrasikan model intent classification dari Tahap 04 dan program studi recommender system
