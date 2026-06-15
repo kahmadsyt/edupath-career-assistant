@@ -1,0 +1,24 @@
+taxonomy_file,field_name,data_type,description,example_value
+school_taxonomy_v2,school_taxonomy_id,string,Primary key internal taxonomy sekolah.,SCH-SMK-001
+school_taxonomy_v2,school_type,category,Jenis satuan pendidikan menengah.,SMA/MA/SMK/MAK
+school_taxonomy_v2,school_group,category,"Kelompok umum, madrasah umum, vokasi, atau madrasah vokasi.",Vokasi
+school_taxonomy_v2,school_major_detail,string,"Jurusan, kelompok mapel, atau konsentrasi keahlian siswa.",RPL
+school_taxonomy_v2,subject_context,string,Konteks mata pelajaran atau kompetensi utama.,"Pemrograman, database, web"
+school_taxonomy_v2,recommended_higher_education_area,string,Area pendidikan tinggi yang umumnya relevan.,"Teknik Informatika, Sistem Informasi"
+program_studi_taxonomy_pddikti_style_v2,program_id,string,Primary key internal program studi.,PRG2-001
+program_studi_taxonomy_pddikti_style_v2,program_name,string,Nama program studi S1.,Teknik Informatika
+program_studi_taxonomy_pddikti_style_v2,jenjang,category,Jenjang pendidikan tinggi.,S1
+program_studi_taxonomy_pddikti_style_v2,rumpun_ilmu,string,Rumpun ilmu atau bidang besar.,Komputer/Informatika
+program_studi_taxonomy_pddikti_style_v2,riasec_primary,category,Kode/nama RIASEC utama untuk program.,Investigative
+program_studi_taxonomy_pddikti_style_v2,riasec_secondary,category,Kode/nama RIASEC sekunder.,Realistic
+program_studi_taxonomy_pddikti_style_v2,mi_primary,category,Kecerdasan dominan yang paling relevan.,Logis-Matematis
+program_studi_taxonomy_pddikti_style_v2,vark_preferred,category,Gaya belajar yang paling mendukung.,Kinesthetic
+program_studi_taxonomy_pddikti_style_v2,career_alignment,category,Orientasi karier utama.,Praktikal
+program_studi_taxonomy_pddikti_style_v2,school_fit,string,Latar sekolah/jurusan yang relatif relevan.,SMA MIPA; SMK RPL/TKJ
+program_studi_taxonomy_pddikti_style_v2,pddikti_reference_status,category,Status validasi terhadap referensi PDDikti.,prototype_pddikti_style
+riasec_taxonomy_v2,riasec_code,category,Kode Holland RIASEC.,R/I/A/S/E/C
+riasec_taxonomy_v2,keyword_signals,string,Keyword pemicu dari input siswa.,coding|data|praktik
+multiple_intelligences_taxonomy_v2,mi_id,string,Primary key Multiple Intelligences.,MI-005
+vark_taxonomy_v2,vark_id,string,Primary key VARK.,VARK-V
+grit_mindset_taxonomy_v2,mindset_id,string,Primary key grit/mindset.,MIND-GROWTH
+career_alignment_taxonomy_v2,career_alignment_id,string,Primary key career alignment.,CAR-PRA

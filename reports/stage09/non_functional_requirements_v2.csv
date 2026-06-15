@@ -1,0 +1,11 @@
+requirement_id,quality_attribute,description,priority
+NFR-001,Explainability,Setiap rekomendasi wajib memiliki score breakdown dan alasan naratif.,High
+NFR-002,Maintainability,Taxonomy disimpan sebagai CSV/JSON terpisah agar mudah diperbarui tanpa mengubah kode utama.,High
+NFR-003,Data Quality,"Dataset synthetic harus memiliki label seimbang, tidak duplikatif berlebihan, dan memiliki metadata source_type.",High
+NFR-004,Scalability,Struktur prodi dan taxonomy harus dapat diperluas dari 30 prodi ke ratusan prodi.,Medium
+NFR-005,Robustness,"Sistem harus tahan terhadap variasi bahasa formal, non-formal, typo ringan, Jawa umum, dan Sunda umum.",High
+NFR-006,Safety,Sistem tidak boleh memberi diagnosis psikologis atau memaksa siswa memilih satu jurusan.,High
+NFR-007,Privacy,"Sistem tidak meminta data sensitif seperti NIK, alamat lengkap, data kesehatan rinci, atau nilai rapor detail jika tidak diperlukan.",High
+NFR-008,Performance,Respons chatbot Streamlit idealnya muncul kurang dari 3 detik untuk model klasik berbasis scikit-learn.,Medium
+NFR-009,Versioning,"Setiap taxonomy memiliki taxonomy_version, created_at, updated_at, dan validation_status.",Medium
+NFR-010,Evaluation Readiness,"Sistem memiliki test scenario untuk intent, routing, rekomendasi, fallback, dan initial choice comparison.",High

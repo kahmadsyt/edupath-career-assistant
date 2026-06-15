@@ -1,0 +1,5 @@
+vark_id,vark_name,description,keyword_signals,learning_strategy
+VARK-V,Visual,"Lebih mudah memahami melalui diagram, grafik, peta konsep, visualisasi, dan contoh visual.",grafik|diagram|visual|gambar|peta konsep|warna|dashboard,"Gunakan infografik, flowchart, mindmap, dashboard, dan video visual."
+VARK-R,Reading/Writing,"Lebih mudah memahami melalui membaca, membuat catatan, rangkuman, dan tulisan terstruktur.",membaca|menulis|catatan|rangkuman|artikel|buku|teks,"Gunakan modul, rangkuman, checklist, dokumentasi, dan latihan tertulis."
+VARK-A,Auditory,"Lebih mudah memahami melalui diskusi, mendengarkan, penjelasan verbal, dan presentasi.",diskusi|dengar|podcast|presentasi|cerita|menjelaskan,"Gunakan diskusi, rekaman audio, presentasi, dan peer teaching."
+VARK-K,Kinesthetic,"Lebih mudah memahami melalui praktik langsung, simulasi, eksperimen, proyek, dan pengalaman nyata.",praktik|simulasi|proyek|eksperimen|langsung|mencoba|lapangan,"Gunakan project-based learning, studi kasus, lab, praktik, dan portofolio."

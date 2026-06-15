@@ -1,0 +1,16 @@
+requirement_id,requirement_name,description,priority,module
+FR-001,Profiling Sekolah,"Sistem menerima input jenis sekolah siswa: SMA, MA, SMK, atau MAK.",Must Have,Input Profil
+FR-002,Profiling Jurusan/Konsentrasi,Sistem menerima jurusan atau konsentrasi siswa sesuai konteks sekolah Indonesia.,Must Have,Input Profil
+FR-003,Pilihan Program Awal,Sistem menyediakan fitur Pilih Jurusan Awal untuk membandingkan intuisi awal siswa dengan hasil pemetaan.,Must Have,Input Profil
+FR-004,Intent Classification,"Sistem mengklasifikasikan intent: sapaan, rekomendasi_prodi, roadmap_belajar, prospek_karier, skill_awal, info_program_studi, klarifikasi_minat, bandingkan_pilihan_awal, fallback.",Must Have,NLP
+FR-005,Guided Profiling,"Jika siswa bingung atau belum mengetahui minat, sistem menanyakan pertanyaan klarifikasi bertahap.",Must Have,Conversation Flow
+FR-006,RIASEC Mapping,"Sistem memetakan minat/passion ke Realistic, Investigative, Artistic, Social, Enterprising, dan Conventional.",Must Have,Taxonomy Mapping
+FR-007,Multiple Intelligences Mapping,"Sistem memetakan kecerdasan dominan ke Linguistik, Visual-Spasial, Musik, Interpersonal, Logis-Matematis, Kinestetik, Intrapersonal, dan Naturalis.",Must Have,Taxonomy Mapping
+FR-008,VARK Mapping,"Sistem memetakan gaya belajar ke Visual, Reading/Writing, Auditory, dan Kinesthetic.",Must Have,Taxonomy Mapping
+FR-009,Grit/Mindset Mapping,"Sistem menilai indikator ketahanan dan motivasi belajar: grit level, growth mindset, fixed mindset, mixed mindset.",Should Have,Taxonomy Mapping
+FR-010,Career Alignment Mapping,"Sistem memetakan orientasi karier ke Akademik, Sosial, Praktikal, Kreatif, dan Eksekutif.",Must Have,Taxonomy Mapping
+FR-011,Hybrid Recommender,"Sistem menghasilkan Top-N prodi menggunakan kombinasi text similarity, structured score, taxonomy fit, dan initial choice alignment.",Must Have,Recommender
+FR-012,Explanation Engine,Sistem menampilkan alasan rekomendasi dalam bentuk score breakdown dan narasi mudah dipahami.,Must Have,Explainability
+FR-013,Roadmap Generator,Sistem memberikan roadmap belajar 3–6 bulan awal berdasarkan prodi prioritas.,Should Have,Roadmap
+FR-014,Safety Disclaimer,Sistem menyatakan bahwa rekomendasi bersifat awal dan perlu divalidasi dengan guru BK/orang tua/konselor.,Must Have,Safety
+FR-015,Audit Output,"Sistem menyimpan output rekomendasi, score component, dan taxonomy version untuk evaluasi.",Should Have,Governance

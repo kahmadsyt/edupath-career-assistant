@@ -1,0 +1,7 @@
+mindset_id,mindset_name,description,keyword_signals,recommended_response_strategy
+GRIT-LOW,Low Grit,"Mudah menyerah, sering kehilangan fokus, membutuhkan dukungan struktur belajar tinggi.",mudah menyerah|cepat bosan|tidak konsisten|bingung mulai|takut gagal,"Berikan roadmap kecil, target mingguan, mentor/guru BK, dan milestone rendah risiko."
+GRIT-MED,Medium Grit,"Cukup mampu bertahan, tetapi perlu penguatan konsistensi dan feedback rutin.",kadang konsisten|butuh arahan|ingin belajar|perlu jadwal,"Berikan target 3 bulan, latihan bertahap, evaluasi mingguan, dan project sederhana."
+GRIT-HIGH,High Grit,"Mampu bertahan, disiplin, dan siap menjalani roadmap yang lebih menantang.",konsisten|pantang menyerah|target jelas|rajin latihan|disiplin,"Berikan roadmap intensif, project portofolio, kompetisi, dan eksplorasi lanjut."
+MIND-GROWTH,Growth Mindset,"Percaya kemampuan dapat berkembang melalui latihan, strategi, dan feedback.",bisa belajar|ingin berkembang|mau mencoba|belajar dari salah|latihan,Cocok dengan rekomendasi prodi menantang selama roadmap jelas.
+MIND-FIXED,Fixed Mindset,Cenderung merasa kemampuan tetap dan takut gagal pada bidang sulit.,tidak bakat|takut gagal|saya tidak bisa|bukan anak pintar|sulit berubah,"Gunakan respons suportif, validasi emosi, dan berikan langkah awal ringan."
+MIND-MIXED,Mixed Mindset,Memiliki kombinasi keyakinan berkembang dan kekhawatiran tertentu.,mau mencoba tapi takut|ingin belajar tapi ragu|kadang percaya diri,Berikan rekomendasi alternatif dan bridge plan.

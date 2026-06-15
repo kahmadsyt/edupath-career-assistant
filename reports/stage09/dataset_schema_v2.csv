@@ -1,0 +1,33 @@
+dataset_name,field_name,data_type,description,example_value
+student_profile_synthetic_v2.csv,student_id,string,Primary key siswa sintetis.,STU-000001
+student_profile_synthetic_v2.csv,school_type,category,SMA/MA/SMK/MAK.,SMK
+student_profile_synthetic_v2.csv,school_major_detail,string,Jurusan/konsentrasi/kelompok mapel.,RPL
+student_profile_synthetic_v2.csv,subject_strengths,string,Mapel/kompetensi dominan dipisahkan pipe.,Matematika|Informatika|Basis Data
+student_profile_synthetic_v2.csv,hobby_signals,string,Hobi/minat aktivitas.,ngoding|membuat aplikasi
+student_profile_synthetic_v2.csv,riasec_primary,category,RIASEC utama hasil synthetic rule.,Investigative
+student_profile_synthetic_v2.csv,riasec_secondary,category,RIASEC sekunder.,Realistic
+student_profile_synthetic_v2.csv,mi_primary,category,Multiple Intelligence dominan.,Logis-Matematis
+student_profile_synthetic_v2.csv,vark_primary,category,Gaya belajar dominan.,Kinesthetic
+student_profile_synthetic_v2.csv,grit_level,category,Low/Medium/High.,Medium
+student_profile_synthetic_v2.csv,mindset_type,category,Growth/Fixed/Mixed.,Growth
+student_profile_synthetic_v2.csv,career_alignment,category,Akademik/Sosial/Praktikal/Kreatif/Eksekutif.,Praktikal
+student_profile_synthetic_v2.csv,initial_choice_program,string,Jurusan awal pilihan siswa.,Pendidikan Dokter
+student_profile_synthetic_v2.csv,expected_top_programs,string,Label expected Top-N dipisahkan pipe.,Teknik Informatika|Sains Data|Sistem Informasi
+chat_history_synthetic_v2.csv,conversation_id,string,Primary key percakapan.,CONV-000001
+chat_history_synthetic_v2.csv,student_id,string,Foreign key ke student_profile.,STU-000001
+chat_history_synthetic_v2.csv,turn_id,integer,Urutan percakapan.,1
+chat_history_synthetic_v2.csv,speaker,category,user/bot.,user
+chat_history_synthetic_v2.csv,message_text,string,Isi pesan.,Aku suka coding dan bingung pilih TI atau Sains Data
+chat_history_synthetic_v2.csv,language_variant,category,id_formal/id_nonformal/jawa_umum/sunda_umum/mixed.,id_nonformal
+intent_dataset_synthetic_v2.csv,utterance_id,string,Primary key utterance.,UTT2-000001
+intent_dataset_synthetic_v2.csv,utterance,string,Teks input user.,Saya mau bandingkan Kedokteran dengan profil saya
+intent_dataset_synthetic_v2.csv,intent_label,category,Label intent.,bandingkan_pilihan_awal
+intent_dataset_synthetic_v2.csv,source_type,category,synthetic_template/synthetic_paraphrase/manual_seed/off_domain.,synthetic_template
+intent_dataset_synthetic_v2.csv,expected_entities,json/string,Entity penting hasil ekstraksi.,"{""initial_choice"":""Pendidikan Dokter""}"
+recommendation_training_pairs_v2.csv,pair_id,string,Primary key pair.,PAIR-000001
+recommendation_training_pairs_v2.csv,student_id,string,Foreign key siswa.,STU-000001
+recommendation_training_pairs_v2.csv,program_id,string,Foreign key program studi.,PRG2-001
+recommendation_training_pairs_v2.csv,label_relevance,integer,"0 tidak relevan, 1 cukup, 2 relevan, 3 sangat relevan.",3
+evaluation_scenarios_v2.csv,scenario_id,string,Primary key skenario.,SCN2-001
+evaluation_scenarios_v2.csv,scenario_group,category,rekomendasi/prospek/roadmap/fallback/initial_choice.,initial_choice
+evaluation_scenarios_v2.csv,expected_behavior,string,Kriteria respons yang diharapkan.,Membandingkan pilihan awal dengan Top-N hasil mapping

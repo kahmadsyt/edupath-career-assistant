@@ -1,0 +1,9 @@
+mi_id,mi_name,description,keyword_signals,example_programs
+MI-001,Linguistik,"Kuat dalam bahasa, membaca, menulis, berbicara, argumentasi.",menulis|membaca|bahasa|pidato|debat|cerita|komunikasi,Hukum; Ilmu Komunikasi; Pendidikan Bahasa Inggris
+MI-002,Visual-Spasial,"Kuat dalam visual, ruang, gambar, desain, peta, bentuk.",desain|gambar|visual|ruang|sketsa|layout|arsitektur,Arsitektur; DKV; Desain Produk
+MI-003,Musik,"Kuat dalam ritme, nada, komposisi, audio, musik.",musik|lagu|audio|ritme|aransemen|sound,Seni Musik; Film dan Televisi; Ilmu Komunikasi
+MI-004,Interpersonal,"Kuat dalam memahami orang lain, kolaborasi, komunikasi, pelayanan.",teman|kelompok|membantu|konseling|komunikasi|mengajar,Psikologi; Keperawatan; Manajemen; PGSD
+MI-005,Logis-Matematis,"Kuat dalam angka, logika, pola, algoritma, analisis, pemodelan.",matematika|logika|angka|algoritma|statistik|data|rumus,Sains Data; Statistika; Teknik Informatika; Akuntansi
+MI-006,Kinestetik,"Kuat dalam aktivitas fisik, praktik langsung, eksperimen, gerak, simulasi.",praktik|gerak|membuat|merakit|lapangan|eksperimen|olahraga,Teknik Mesin; Keperawatan; Agroteknologi; Teknik Sipil
+MI-007,Intrapersonal,"Kuat dalam refleksi diri, tujuan pribadi, disiplin, pemahaman emosi diri.",refleksi|mandiri|target|introspeksi|motivasi|fokus,Psikologi; Filsafat; Manajemen; Pendidikan
+MI-008,Naturalis,"Kuat dalam alam, hewan, tumbuhan, lingkungan, pangan, kesehatan ekologis.",alam|hewan|tumbuhan|lingkungan|pangan|pertanian|biologi,Biologi; Agroteknologi; Agribisnis; Teknologi Pangan

@@ -119,6 +119,62 @@ REQUIRED_DATASET_COLUMNS = {
     "normalisasi": ["kata_input_clean", "kata_baku_clean"],
 }
 
+PROFILE_FORM_MARKERS = [
+    "jenjang pendidikan:",
+    "kelas:",
+    "gaya belajar dominan:",
+    "mata pelajaran favorit:",
+    "minat utama:",
+    "hobi atau aktivitas yang disukai:",
+    "tujuan karier:",
+]
+
+DOMAIN_FALLBACKS = {
+    "kesehatan": {
+        "keywords": [
+            "kesehatan", "dokter", "kedokteran", "medis", "perawat",
+            "keperawatan", "farmasi", "gizi", "rumah sakit", "biologi"
+        ],
+        "programs": [
+            {
+                "nama_program_studi": "Kedokteran",
+                "bidang": "Kesehatan dan ilmu medis",
+                "alasan": "paling relevan untuk tujuan karier menjadi dokter.",
+                "prospek": "Dokter umum, dokter spesialis setelah pendidikan lanjutan, peneliti kesehatan, tenaga medis klinis.",
+                "skill": "Biologi dasar, kimia dasar, anatomi dasar, komunikasi pasien, etika profesi."
+            },
+            {
+                "nama_program_studi": "Keperawatan",
+                "bidang": "Kesehatan dan pelayanan pasien",
+                "alasan": "cocok untuk siswa yang tertarik pada pelayanan kesehatan dan pendampingan pasien.",
+                "prospek": "Perawat, perawat klinis, perawat komunitas, edukator kesehatan.",
+                "skill": "Dasar keperawatan, komunikasi empatik, keselamatan pasien, observasi klinis."
+            },
+            {
+                "nama_program_studi": "Kesehatan Masyarakat",
+                "bidang": "Kesehatan publik",
+                "alasan": "cocok jika minatnya pada pencegahan penyakit, edukasi kesehatan, dan analisis masalah kesehatan masyarakat.",
+                "prospek": "Analis kesehatan masyarakat, epidemiology assistant, promotor kesehatan, health program officer.",
+                "skill": "Statistik dasar, epidemiologi dasar, promosi kesehatan, analisis data kesehatan."
+            },
+            {
+                "nama_program_studi": "Farmasi",
+                "bidang": "Obat dan pelayanan kefarmasian",
+                "alasan": "relevan untuk siswa IPA yang tertarik pada obat, kimia, dan layanan kesehatan.",
+                "prospek": "Apoteker setelah pendidikan profesi, staf farmasi, quality control farmasi, medical representative.",
+                "skill": "Kimia dasar, biologi dasar, farmakologi dasar, ketelitian laboratorium."
+            },
+            {
+                "nama_program_studi": "Gizi",
+                "bidang": "Kesehatan dan nutrisi",
+                "alasan": "sesuai untuk minat kesehatan yang berfokus pada pola makan, nutrisi, dan pencegahan penyakit.",
+                "prospek": "Nutritionist, konsultan gizi, staf gizi rumah sakit, edukator nutrisi.",
+                "skill": "Biologi dasar, ilmu gizi dasar, komunikasi edukatif, analisis pola makan."
+            },
+        ],
+    }
+}
+
 
 @dataclass
 class ProjectPaths:
@@ -427,9 +483,38 @@ class EduPathChatbot:
             "matched_keywords": [],
         }
 
+    def is_profile_form_query(self, user_text: str) -> bool:
+        """Detect profile-form prompts sent from Streamlit.
+
+        The form prompt often contains words such as "roadmap" or "karier".
+        Without this guard, rule-based routing can incorrectly classify a
+        profile recommendation request as roadmap_belajar or prospek_karier.
+        """
+        text = str(user_text).lower()
+
+        if "[mode:rekomendasi_profil]" in text:
+            return True
+
+        marker_count = sum(1 for marker in PROFILE_FORM_MARKERS if marker in text)
+        has_recommendation_phrase = (
+            "rekomendasi program studi" in text
+            or "rekomendasi prodi" in text
+            or "berdasarkan profil" in text
+        )
+
+        return marker_count >= 3 and has_recommendation_phrase
+
     def route_intent(self, user_text: str, model_threshold: float = 0.30) -> Dict[str, Any]:
         model_result = self.predict_intent(user_text)
         rule_result = self.rule_based_intent(user_text)
+
+        if self.is_profile_form_query(user_text):
+            return {
+                "final_intent": "rekomendasi_prodi",
+                "routing_source": "profile_form",
+                "model_result": model_result,
+                "rule_result": rule_result,
+            }
 
         model_intent = model_result["predicted_intent"]
         model_confidence = float(model_result["confidence"])
@@ -593,10 +678,134 @@ class EduPathChatbot:
         return None
 
     # ============================================================
+    # Domain Coverage Guard
+    # ============================================================
+
+    def dataset_contains_domain_keywords(self, keywords: List[str]) -> bool:
+        """Check whether program profile dataset contains a requested domain."""
+        profile_text = " ".join(
+            self.program_profiles_df.astype(str).fillna("").agg(" ".join, axis=1).tolist()
+        ).lower()
+        return any(keyword.lower() in profile_text for keyword in keywords)
+
+    def detect_domain_gap(self, user_text: str) -> Optional[str]:
+        """Detect a domain requested by user but not covered by current dataset."""
+        normalized = self.normalize_text(user_text).lower()
+        raw = self.clean_text(user_text).lower()
+        combined = f"{raw} {normalized}"
+
+        for domain, config in DOMAIN_FALLBACKS.items():
+            keywords = config.get("keywords", [])
+            user_mentions_domain = any(keyword.lower() in combined for keyword in keywords)
+            dataset_has_domain = self.dataset_contains_domain_keywords(keywords)
+
+            if user_mentions_domain and not dataset_has_domain:
+                return domain
+
+        return None
+
+    @staticmethod
+    def format_generic_roadmap(program_name: str) -> List[str]:
+        """Create a simple generic roadmap when detailed roadmap data is unavailable."""
+        return [
+            f"1. Pahami gambaran umum {program_name}, mata kuliah inti, dan prospek kariernya.",
+            "2. Perkuat mata pelajaran pendukung di sekolah, terutama yang relevan dengan bidang tersebut.",
+            "3. Ikuti aktivitas praktik sederhana, membaca sumber pengantar, dan mulai membuat catatan/portofolio belajar.",
+            "4. Validasi pilihan melalui guru BK, orang tua, alumni, atau informasi resmi kampus.",
+        ]
+
+    def format_domain_gap_response(self, domain: str) -> Tuple[str, pd.DataFrame]:
+        """Return a useful answer when the requested domain is outside dataset coverage."""
+        config = DOMAIN_FALLBACKS[domain]
+        programs = config["programs"]
+        fallback_df = pd.DataFrame(programs)
+        fallback_df.insert(0, "rank", range(1, len(fallback_df) + 1))
+
+        lines = [
+            "Berdasarkan profil yang disampaikan, minat Anda lebih mengarah ke rumpun kesehatan.",
+            "Namun, dataset rekomendasi yang sedang digunakan aplikasi saat ini belum memiliki data program studi kesehatan yang cukup lengkap. Karena itu, berikut rekomendasi akademik umum yang lebih sesuai:\n",
+        ]
+
+        for idx, item in enumerate(programs, start=1):
+            lines.append(f"{idx}. {item['nama_program_studi']}")
+            lines.append(f"   - Bidang: {item['bidang']}")
+            lines.append(f"   - Alasan: {item['alasan']}")
+            lines.append(f"   - Prospek karier: {item['prospek']}")
+            lines.append(f"   - Skill awal: {item['skill']}")
+            lines.append("")
+
+        lines.append("Roadmap belajar awal yang disarankan:")
+        lines.append("1. Perkuat Biologi, Kimia, Matematika dasar, dan Bahasa Inggris.")
+        lines.append("2. Mulai membaca pengantar anatomi, kesehatan manusia, etika profesi, dan literasi kesehatan.")
+        lines.append("3. Ikuti kegiatan pendukung seperti PMR, karya ilmiah remaja, seminar kesehatan, atau observasi profesi kesehatan.")
+        lines.append("4. Cek syarat masuk resmi dari kampus tujuan karena beberapa program kesehatan memiliki seleksi dan ketentuan khusus.")
+        lines.append("")
+        lines.append(
+            "Catatan: agar aplikasi dapat memberi rekomendasi berbasis dataset untuk kasus seperti ini, "
+            "dataset program studi sebaiknya ditambah dengan rumpun Kedokteran, Keperawatan, Farmasi, Gizi, dan Kesehatan Masyarakat."
+        )
+
+        return "\n".join(lines), fallback_df
+
+    def build_natural_reason(self, row: pd.Series) -> str:
+        """Build user-facing recommendation reason without technical scores."""
+        parts = []
+
+        bidang = safe_text(row.get("bidang_keilmuan"), "")
+        minat = safe_text(row.get("minat_cocok"), "")
+        mapel = safe_text(row.get("mapel_relevan"), "")
+        hobi = safe_text(row.get("hobi_relevan"), "")
+        gaya = safe_text(row.get("gaya_belajar_cocok"), "")
+
+        if bidang and bidang != "-":
+            parts.append(f"berada pada bidang {bidang}")
+        if minat and minat != "-":
+            parts.append(f"relevan dengan minat seperti {minat}")
+        if mapel and mapel != "-":
+            parts.append(f"didukung oleh mata pelajaran {mapel}")
+        if hobi and hobi != "-":
+            parts.append(f"selaras dengan aktivitas seperti {hobi}")
+        if gaya and gaya != "-":
+            parts.append(f"cocok untuk gaya belajar {gaya}")
+
+        if not parts:
+            return "program ini memiliki kedekatan dengan profil minat dan tujuan karier yang Anda sampaikan."
+
+        return "; ".join(parts[:3]) + "."
+
+    def append_top_program_roadmap(self, lines: List[str], rec_df: pd.DataFrame) -> None:
+        """Append roadmap for the first recommendation without failing when roadmap is unavailable."""
+        if rec_df.empty:
+            return
+
+        top_program_id = rec_df.iloc[0].get("program_id")
+        top_program_name = safe_text(rec_df.iloc[0].get("nama_program_studi"), "program studi pilihan utama")
+        roadmap = self.get_roadmap_by_program_id(str(top_program_id))
+
+        lines.append("Roadmap belajar awal untuk rekomendasi prioritas utama:")
+
+        if roadmap.empty:
+            for item in self.format_generic_roadmap(top_program_name):
+                lines.append(f"- {item}")
+            lines.append("")
+            return
+
+        for _, row in roadmap.head(3).iterrows():
+            fase = safe_text(row.get("fase"))
+            tujuan = safe_text(row.get("tujuan_fase"))
+            materi = safe_text(row.get("materi_pokok"))
+            lines.append(f"- {fase}: {tujuan} Materi awal: {materi}.")
+        lines.append("")
+
+    # ============================================================
     # Response Formatting
     # ============================================================
 
     def format_recommendation_response(self, user_text: str, top_n: int = 3) -> Tuple[str, pd.DataFrame]:
+        domain_gap = self.detect_domain_gap(user_text)
+        if domain_gap is not None:
+            return self.format_domain_gap_response(domain_gap)
+
         rec_df = self.recommend_programs(user_text, top_n=top_n)
 
         if rec_df.empty:
@@ -609,14 +818,14 @@ class EduPathChatbot:
         lines = ["Berikut rekomendasi awal program studi berdasarkan profil yang Anda sampaikan:\n"]
 
         for _, row in rec_df.iterrows():
-            keywords = safe_text(row.get("matched_keywords"), "belum ada keyword dominan")
-            lines.append(f"{int(row['rank'])}. {row['nama_program_studi']} ({row['jenjang']})")
+            lines.append(f"{int(row['rank'])}. {row['nama_program_studi']} ({safe_text(row.get('jenjang'))})")
             lines.append(f"   - Bidang: {safe_text(row.get('bidang_keilmuan'))}")
-            lines.append(f"   - Alasan: cocok dengan keyword `{keywords}`.")
-            lines.append(f"   - Skor akhir: {safe_text(row.get('final_score'))}")
+            lines.append(f"   - Alasan: {self.build_natural_reason(row)}")
             lines.append(f"   - Prospek karier: {safe_text(row.get('prospek_karier'))}")
             lines.append(f"   - Skill awal: {safe_text(row.get('skill_awal'))}")
             lines.append("")
+
+        self.append_top_program_roadmap(lines, rec_df)
 
         lines.append(
             "Catatan: rekomendasi ini bersifat awal dan sebaiknya divalidasi kembali "
@@ -626,6 +835,11 @@ class EduPathChatbot:
         return "\n".join(lines), rec_df
 
     def format_roadmap_response(self, user_text: str) -> Tuple[str, pd.DataFrame]:
+        domain_gap = self.detect_domain_gap(user_text)
+        if domain_gap is not None:
+            response_text, payload = self.format_domain_gap_response(domain_gap)
+            return response_text, payload
+
         program = self.find_program_from_text(user_text)
 
         if program is None:
@@ -637,10 +851,13 @@ class EduPathChatbot:
 
         roadmap = self.get_roadmap_by_program_id(program["program_id"])
         if roadmap.empty:
-            return (
-                f"Roadmap untuk {program['nama_program_studi']} belum tersedia pada dataset saat ini.",
-                roadmap,
-            )
+            lines = [
+                f"Roadmap khusus untuk {program['nama_program_studi']} belum tersedia pada dataset saat ini. "
+                "Berikut roadmap umum yang tetap dapat digunakan:\n"
+            ]
+            for item in self.format_generic_roadmap(str(program["nama_program_studi"])):
+                lines.append(f"- {item}")
+            return "\n".join(lines), roadmap
 
         lines = [f"Roadmap belajar awal untuk {program['nama_program_studi']} ({program['jenjang']}):\n"]
 
@@ -839,3 +1056,68 @@ class EduPathChatbot:
             "recommender_method": self.recommender_config.get("method"),
             "intent_labels": self.intent_metadata.get("labels", []),
         }
+
+
+# ============================================================
+# Module-level Streamlit wrapper
+# ============================================================
+
+_CHATBOT_INSTANCE: Optional[EduPathChatbot] = None
+
+
+def get_chatbot(
+    project_root: Optional[Path] = None,
+    force_reload: bool = False
+) -> EduPathChatbot:
+    """
+    Return a singleton EduPathChatbot instance.
+
+    This wrapper is intentionally placed at module level so app.py can import:
+        from chatbot_utils import chatbot_response
+
+    Parameters
+    ----------
+    project_root:
+        Optional project root path. Normally not needed when running:
+        streamlit run app/app.py
+    force_reload:
+        Set True when the app needs to reload datasets/models from disk.
+    """
+    global _CHATBOT_INSTANCE
+
+    if force_reload or _CHATBOT_INSTANCE is None:
+        _CHATBOT_INSTANCE = EduPathChatbot(project_root=project_root)
+
+    return _CHATBOT_INSTANCE
+
+
+def chatbot_response(
+    user_text: Optional[str] = None,
+    top_n: int = 3,
+    return_dict: bool = False,
+    query: Optional[str] = None,
+    **_: Any
+) -> Any:
+    """
+    Main chatbot function used by Streamlit app.py.
+
+    This function delegates processing to EduPathChatbot.chatbot_response().
+    It accepts both user_text and query so it remains compatible with
+    different calling styles in app.py.
+
+    Examples
+    --------
+    chatbot_response("Saya suka matematika dan komputer")
+    chatbot_response(query="Saya ingin jadi Data Analyst")
+    """
+    final_text = user_text if user_text is not None else query
+
+    if final_text is None:
+        final_text = ""
+
+    bot = get_chatbot()
+    return bot.chatbot_response(
+        user_input=str(final_text),
+        top_n=top_n,
+        return_dict=return_dict
+    )

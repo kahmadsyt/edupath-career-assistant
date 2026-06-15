@@ -1,0 +1,36 @@
+student_id,initial_choice_program,program_id,program_name,text_similarity,riasec_fit,multiple_intelligence_fit,school_background_fit,career_alignment_fit,academic_readiness,vark_fit,initial_choice_alignment,final_score,career_examples
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-001,Teknik Informatika,1.0,1.0,1.0,1.0,1.0,0.8,1.0,0.3,0.945,Software Engineer; Backend Developer; AI Engineer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-012,Statistika,1.0,1.0,1.0,1.0,0.5,0.8,0.5,0.3,0.87,Statistician; Data Analyst; Survey Researcher
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-003,Sains Data,1.0,1.0,1.0,1.0,0.5,0.8,0.5,0.3,0.87,Data Analyst; Data Scientist; ML Engineer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-015,Pendidikan Dokter,1.0,1.0,1.0,0.5,0.5,0.8,0.5,1.0,0.855,Dokter; Clinical Researcher; Medical Educator
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-014,Kimia,1.0,1.0,1.0,0.5,0.5,0.8,1.0,0.3,0.845,Chemist; Lab Analyst; Quality Control Analyst
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-011,Matematika,1.0,1.0,1.0,0.5,0.5,0.8,0.5,0.3,0.82,Mathematician; Quant Analyst; Research Assistant
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-004,Teknologi Informasi,0.3,1.0,1.0,0.5,1.0,0.8,1.0,0.3,0.72,IT Infrastructure Engineer; Cloud Engineer; Network Engineer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-006,Teknik Elektro,0.3,1.0,1.0,0.5,1.0,0.8,1.0,0.3,0.72,Electrical Engineer; IoT Engineer; Automation Engineer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-008,Teknik Mesin,0.3,1.0,1.0,0.5,1.0,0.8,1.0,0.3,0.72,Mechanical Engineer; Maintenance Engineer; Manufacturing Engineer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-016,Farmasi,0.3,1.0,1.0,0.5,0.5,0.8,0.5,0.3,0.645,Pharmacist Assistant Pathway; QA Analyst; Regulatory Affairs
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-027,Akuntansi,0.3,1.0,1.0,0.5,0.5,0.8,0.5,0.3,0.645,Accountant; Auditor; Tax Staff
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-028,Ekonomi Pembangunan,0.3,1.0,1.0,0.5,0.5,0.8,0.5,0.3,0.645,Economic Analyst; Research Assistant; Policy Analyst
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-034,Teknologi Pangan,0.3,1.0,0.4,0.5,1.0,0.8,1.0,0.3,0.63,Food Technologist; QA Food Analyst; Product Development Staff
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-033,Agroteknologi,0.3,1.0,0.4,0.5,1.0,0.6,1.0,0.3,0.61,Agronomist; Field Officer; Research Assistant
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-009,Teknik Sipil,0.3,1.0,0.4,0.5,1.0,0.8,0.5,0.3,0.605,Civil Engineer; Construction Engineer; Quantity Surveyor
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-024,Pendidikan Guru Sekolah Dasar,1.0,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.55,Elementary Teacher; Education Content Developer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-019,Ilmu Gizi,0.3,1.0,0.4,0.5,0.5,0.6,0.5,0.3,0.535,Nutritionist Assistant Pathway; Food Analyst; Health Educator
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-020,Psikologi,0.3,1.0,0.4,0.5,0.5,0.6,0.5,0.3,0.535,HR Analyst; Counselor Assistant; Research Assistant
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-018,Kesehatan Masyarakat,0.3,1.0,0.4,0.5,0.5,0.6,0.5,0.3,0.535,Public Health Officer; Health Educator; Epidemiology Assistant
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-013,Biologi,0.3,1.0,0.4,0.5,0.5,0.6,0.5,0.3,0.535,Biologist; Lab Analyst; Research Assistant
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-002,Sistem Informasi,0.3,0.2,1.0,1.0,0.5,0.6,0.5,0.3,0.515,Business Analyst; System Analyst; ERP Consultant
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-032,Agribisnis,0.3,0.5,0.4,0.5,1.0,0.6,1.0,0.3,0.51,Agribusiness Analyst; Farm Entrepreneur; Supply Chain Staff
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-007,Teknik Industri,0.3,0.2,1.0,0.5,0.5,0.8,0.5,0.3,0.485,Industrial Engineer; Supply Chain Analyst; Quality Engineer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-017,Keperawatan,0.3,0.5,0.4,0.5,0.5,0.6,1.0,0.3,0.46,Nurse; Healthcare Educator; Care Coordinator
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-030,Desain Produk,0.3,0.5,0.4,0.5,0.5,0.6,1.0,0.3,0.46,Product Designer; Industrial Designer; Creative Entrepreneur
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-010,Arsitektur,0.3,0.5,0.4,0.5,0.5,0.6,0.5,0.3,0.435,Architect; Interior Designer; Urban Designer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-021,Ilmu Komunikasi,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,PR Officer; Content Strategist; Communication Specialist
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-022,Ilmu Hukum,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,Legal Officer; Paralegal; Compliance Staff
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-023,Administrasi Publik,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,Policy Analyst; Public Administrator; Program Officer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-025,Pendidikan Bahasa Inggris,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,English Teacher; Translator; Education Content Creator
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-026,Manajemen,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,Management Trainee; HR Staff; Operations Staff
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-029,Desain Komunikasi Visual,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,Graphic Designer; UI Designer; Brand Designer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-031,Film dan Televisi,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,Filmmaker; Video Producer; Creative Director Assistant
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-005,Bisnis Digital,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,Digital Business Analyst; Product Associate; Digital Marketer
+STU-SAMPLE-001,Pendidikan Dokter,PRG2-035,Pariwisata,0.3,0.2,0.4,0.5,0.5,0.6,0.5,0.3,0.375,Tourism Planner; Hospitality Staff; Event Officer
