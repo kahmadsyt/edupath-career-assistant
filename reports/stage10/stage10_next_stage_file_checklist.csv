@@ -1,0 +1,17 @@
+﻿file_path,exists,size_bytes,recommended_for_stage11
+data\synthetic\student_profiles_synthetic_v2.csv,True,8670646,True
+data\synthetic\chat_history_synthetic_v2.csv,True,10802596,True
+data\synthetic\intent_dataset_synthetic_v2.csv,True,2135377,True
+data\processed\intent_dataset_v2_synthetic.csv,True,2135377,True
+data\synthetic\profile_mapping_synthetic_v2.csv,True,16592056,True
+data\synthetic\initial_major_vs_recommendation_v2.csv,True,4153979,True
+reports\stage10\synthetic_data_quality_report_stage10.csv,True,1577,True
+reports\stage10\stage10_output_checklist.csv,True,623,True
+reports\stage10\stage10_synthetic_dataset_summary.csv,True,364,True
+reports\stage10\stage10_academic_conclusion.md,True,1968,True
+reports\figures\stage10\intent_label_distribution_stage10.png,True,91080,True
+reports\figures\stage10\language_variant_distribution_stage10.png,True,52693,True
+reports\figures\stage10\school_type_distribution_stage10.png,True,39958,True
+reports\figures\stage10\riasec_distribution_stage10.png,True,56500,True
+reports\figures\stage10\initial_choice_alignment_distribution_stage10.png,True,65249,True
+reports\figures\stage10\top1_program_distribution_stage10.png,True,122647,True

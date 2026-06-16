@@ -1,0 +1,8 @@
+﻿output_name,output_path,exists,size_bytes
+student_profiles,data\synthetic\student_profiles_synthetic_v2.csv,True,8670646
+chat_history,data\synthetic\chat_history_synthetic_v2.csv,True,10802596
+intent_dataset,data\synthetic\intent_dataset_synthetic_v2.csv,True,2135377
+intent_dataset_processed_copy,data\processed\intent_dataset_v2_synthetic.csv,True,2135377
+profile_mapping,data\synthetic\profile_mapping_synthetic_v2.csv,True,16592056
+initial_vs_recommendation,data\synthetic\initial_major_vs_recommendation_v2.csv,True,4153979
+quality_report,reports\stage10\synthetic_data_quality_report_stage10.csv,True,1577

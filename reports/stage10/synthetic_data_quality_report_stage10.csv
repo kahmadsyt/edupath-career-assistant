@@ -1,0 +1,21 @@
+﻿dataset_name,check_name,value,status,notes,checked_at
+student_profiles,row_count,12000.0,PASS,Target minimal akademik 10.000 profil.,2026-06-16 10:01:16
+student_profiles,duplicate_student_id,0.0,PASS,,2026-06-16 10:01:16
+student_profiles,missing_student_id,0.0,PASS,,2026-06-16 10:01:16
+student_profiles,missing_school_type,0.0,PASS,,2026-06-16 10:01:16
+student_profiles,missing_school_major_detail,0.0,PASS,,2026-06-16 10:01:16
+student_profiles,missing_riasec_primary,0.0,PASS,,2026-06-16 10:01:16
+student_profiles,missing_mi_primary,0.0,PASS,,2026-06-16 10:01:16
+student_profiles,missing_vark_primary,0.0,PASS,,2026-06-16 10:01:16
+student_profiles,missing_expected_top_programs,0.0,PASS,,2026-06-16 10:01:16
+intent_dataset,row_count,6151.0,WARNING,Target minimal akademik 10.000 utterance.,2026-06-16 10:01:16
+intent_dataset,duplicate_utterance_id,0.0,PASS,,2026-06-16 10:01:16
+intent_dataset,min_intent_count,10.0,WARNING,,2026-06-16 10:01:16
+intent_dataset,intent_imbalance_ratio,389.1,WARNING,Rasio tinggi berarti label imbalance perlu diperhatikan saat modeling.,2026-06-16 10:01:16
+chat_history,row_count,64000.0,PASS,,2026-06-16 10:01:16
+chat_history,conversation_count,8000.0,PASS,,2026-06-16 10:01:16
+profile_mapping,row_count,60000.0,PASS,,2026-06-16 10:01:16
+profile_mapping,student_coverage,12000.0,PASS,,2026-06-16 10:01:16
+profile_mapping,program_coverage,35.0,PASS,,2026-06-16 10:01:16
+initial_vs_recommendation,row_count,12000.0,PASS,,2026-06-16 10:01:16
+initial_vs_recommendation,alignment_category_count,5.0,PASS,,2026-06-16 10:01:16

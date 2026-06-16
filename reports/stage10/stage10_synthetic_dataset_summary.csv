@@ -1,0 +1,11 @@
+﻿metric,value
+Jumlah profil siswa sintetis,12000.0
+Jumlah chat history rows,64000.0
+Jumlah conversation sintetis,8000.0
+Jumlah utterance intent dataset,6151.0
+Jumlah label intent,9.0
+Jumlah variasi bahasa,5.0
+Jumlah profile mapping rows,60000.0
+Jumlah program studi tercakup di rekomendasi,35.0
+Rata-rata skor Top-1,0.88
+Jumlah kategori alignment,5.0
